@@ -1,0 +1,8 @@
+.special {
+  background-color: #990000;
+  background-image: -webkit-linear-gradient(#990000, #000000);
+  background-image: linear-gradient(#990000, #000000); }
+  .special p {
+    color: #bbbbbb; }
+
+/*# sourceMappingURL=test.css.map */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,QAAQ;ECiCN,gBAAgB,EAPC,OAAW;EAQ5B,gBAAgB,EAAE,yCAA0C;EAC5D,gBAAgB,EAAE,iCAAgD;EDjCnE,UAAC;IACA,KAAK,EAAE,OAAO",
+"sources": ["test.sass","bourbon/css3/_linear-gradient.scss"],
+"names": [],
+"file": "test.css"
+}

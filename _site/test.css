@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.article-container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .article-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .article-container .interesting-insight {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    margin-left: 17.05961%; }
+    .article-container .interesting-insight:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      .article-container .interesting-insight {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        .article-container .interesting-insight:last-child {
+          margin-right: 0; } }
+  .article-container .syndicated-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: -17.05961%; }
+    .article-container .syndicated-content:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      .article-container .syndicated-content {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        .article-container .syndicated-content:last-child {
+          margin-right: 0; } }
+
+/*# sourceMappingURL=test.css.map */

@@ -5,34 +5,3 @@
 @import "neat/neat";
 
 $mobile: new-breakpoint(max-width 600px 6);
-
-
-.site-container {
-	@include outer-container;
-	border: 1px solid red;
-}
-
-.site-column-1 {
-	@include span-columns(5);
-	@include media($mobile) {
-		@include span-columns(5);
-	}
-	border: 1px solid blue;
-	height: 9em;
-}
-
-.site-column-2 {
-	@include span-columns(7);
-	@include media($mobile) {
-		@include span-columns(5);
-		margin-top: 1em;
-	}
-	border: 1px solid cyan;
-	height: 9em;
-}
-
-.site-typo {
-	color: orange;
-	font-size: 2em;
-	padding-left: 1em;
-}

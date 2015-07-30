@@ -1,7 +1,32 @@
 ---
 ---
 
+
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+
 $mobile: new-breakpoint(max-width 600px 6);
+
+
+@-ms-viewport{
+  width: device-width;
+}
+
+
+{% include fonts.css %}
+
+
+body {
+  font-family: "Lato", Helvetica, sans-serif;
+}
+
+a {
+  font-weight: 300;
+  font-style: italic;
+}
+
+p {
+  font-weight: 400;
+  font-style: normal;
+}

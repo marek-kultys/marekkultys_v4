@@ -1,2 +1,2 @@
 # marekkultys_v4
-marek kultys' personal website v4
+personal website for marek kultys v4

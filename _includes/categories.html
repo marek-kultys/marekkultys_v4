@@ -1,5 +1,59 @@
-<p>Work by category</p>
-<a href="/projects">Projects</a>
-<a href="/publications">Writing</a>
-<a href="/talks">Talks</a>
-<a href="/workshops">Workshops</a>
+<h3>See other:</h3>
+
+{% if page.similar == "2plus3d" %}
+   <a href="/publications">publications</a>
+{% endif %}
+
+{% if page.similar == "bento" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>
+{% endif %}
+
+{% if page.similar == "factors" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>
+{% endif %}
+
+{% if page.similar == "immuno" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>,
+   <a href="/talks">presentations</a>
+{% endif %}
+
+{% if page.similar == "biology" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>,
+   <a href="/talks">presentations</a>
+{% endif %}
+
+{% if page.similar == "paradoxes" %}
+   <a href="/workshops">workshops</a>
+{% endif %}
+
+{% if page.similar == "bundles" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>,
+   <a href="/publications">publications</a>,
+   <a href="/talks">presentations</a>
+{% endif %}
+
+{% if page.similar == "seti" %}
+   <a href="/writing">publications</a>,
+   <a href="/talks">presentations</a>
+{% endif %}
+
+{% if page.similar == "sexshop" %}
+   <a href="/projects">projects</a>
+{% endif %}
+
+{% if page.similar == "hearing" %}
+   <a href="/projects">projects</a>,
+   <a href="/prototypes">prototypes</a>,
+   <a href="/publications">publications</a>
+{% endif %}
+
+{% if page.similar == "visweek" %}
+   <a href="/workshops">workshops</a>,
+   <a href="/publications">publications</a>,
+   <a href="/talks">presentations</a>
+{% endif %}

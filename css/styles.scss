@@ -6,27 +6,57 @@
 @import "neat/neat";
 
 
-$mobile: new-breakpoint(max-width 600px 6);
+{% include fonts.css %}
 
 
+$medium: new-breakpoint(min-width 641px);
+$large: new-breakpoint(min-width 769px);
+
+
+//FIXES
 @-ms-viewport{
   width: device-width;
 }
 
 
-{% include fonts.css %}
 
 
 body {
-  font-family: "Lato", Helvetica, sans-serif;
+   @include outer-container;
+   border: 1px solid black;
+   font-family: "Lato", Helvetica, sans-serif;
+   margin: 0px auto;
 }
 
 a {
   font-weight: 300;
   font-style: italic;
+  color: blue;
 }
 
 p {
   font-weight: 400;
   font-style: normal;
+}
+
+.navbar-out {
+   @include outer-container;
+   border: 1px solid red;
+
+   .navbar-in {
+      display: block;
+      @include span-columns(12);
+      border: 1px solid purple;
+      height: 3em;
+      @include media($medium) {
+         @include span-columns(12);
+         border: 1px solid green;
+         height: 4em;
+      }
+      @include media($large) {
+         @include span-columns(4);
+         border: 1px solid blue;
+         height: 4em;
+      }
+   }
 }

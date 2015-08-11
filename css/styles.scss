@@ -11,6 +11,150 @@
 
 $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
+$full: new-breakpoint(min-width 1120px);
+
+
+
+
+body {
+   @include outer-container;
+   //border: 1px solid black;
+   font-family: "Lato", Helvetica, sans-serif;
+   margin: 0px auto;
+   max-width: 1080px;
+}
+
+a {
+   font-weight: 300;
+   color: inherit;
+}
+
+p {
+   font-weight: 400;
+   font-style: normal;
+}
+
+h1 {
+   font-size: 2em;
+   font-weight: 400;
+   line-height: 150%;
+}
+
+h2 {
+   font-size: 2em;
+   font-weight: 300;
+   line-height: 150%;
+}
+
+h3 {
+   font-size: 1.2em;
+   line-height: 133%;
+   font-weight: 400;
+   @include media($medium) {
+      font-size: 1.33em;
+      line-height: 133%;
+   }
+   @include media($large) {
+      font-size: 1.5em;
+      line-height: 150%;
+   }
+}
+
+
+.navbar-out {
+   @include outer-container;
+
+   .navbar-in {
+      display: block;
+      text-decoration: none;
+      background-color: #cccccc;
+      @include span-columns(12);
+      border-bottom: 2px solid white;
+      font-size: 1.2em;
+      padding: 0.5em;
+      padding-left: 1em;
+      text-align: left;
+      @include media($medium) {
+         @include span-columns(12);
+         border-bottom: 3px solid white;
+         font-size: 1.33em;
+         padding: 0.66em;
+         padding-left: 1em;
+         text-align: left;
+      }
+      @include media($large) {
+         @include span-columns(4);
+         font-size: 1.5em;
+         padding: 0.66em;
+         text-align: center;
+      }
+   }
+}
+
+
+.linkback-out {
+   @include outer-container;
+
+   .linkback-in {
+      display: block;
+      text-align: left;
+      padding-left: 25%;
+      text-decoration: none;
+      background-color: #cccccc;
+      @include span-columns(12);
+      border-bottom: 2px solid white;
+      font-size: 1.2em;
+      padding: 0.66em;
+      @include media($medium) {
+         @include span-columns(12);
+         border-bottom: 3px solid white;
+         font-size: 1.33em;
+         padding: 0.66em;
+      }
+      @include media($large) {
+         @include span-columns(12);
+         font-size: 1.5em;
+         padding: 0.66em;
+      }
+   }
+}
+
+
+.page-block {
+   @include outer-container;
+   margin: 1em;
+   @include media($full) {
+      margin: 0px;
+   }
+}
+
+
+.works-out {
+   @include outer-container;
+
+   .works-unit {
+      margin-bottom: 2em;
+   }
+
+   .works-typo {
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.25em;
+   }
+
+   .works-image {
+      width: 100%;
+      height: auto;
+   }
+}
+
+
+.copyright-typo {
+   font-weight: 300;
+   text-align: center;
+}
+
+
 
 
 //FIXES
@@ -18,45 +162,8 @@ $large: new-breakpoint(min-width 769px);
   width: device-width;
 }
 
-
-
-
-body {
-   @include outer-container;
-   border: 1px solid black;
-   font-family: "Lato", Helvetica, sans-serif;
-   margin: 0px auto;
-}
-
-a {
-  font-weight: 300;
-  font-style: italic;
-  color: blue;
-}
-
-p {
-  font-weight: 400;
-  font-style: normal;
-}
-
-.navbar-out {
-   @include outer-container;
-   border: 1px solid red;
-
-   .navbar-in {
-      display: block;
-      @include span-columns(12);
-      border: 1px solid purple;
-      height: 3em;
-      @include media($medium) {
-         @include span-columns(12);
-         border: 1px solid green;
-         height: 4em;
-      }
-      @include media($large) {
-         @include span-columns(4);
-         border: 1px solid blue;
-         height: 4em;
-      }
-   }
+//FIX for jumping scroll bar when page overflows
+html {
+    overflow-y: scroll;
+	 overflow-x: ignore;
 }

@@ -19,7 +19,7 @@ $full: new-breakpoint(min-width 1120px);
 body {
    @include outer-container;
    //border: 1px solid black;
-   font-family: "Lato", Helvetica, sans-serif;
+   font-family: "Roboto", Helvetica, sans-serif;
    margin: 0px auto;
    max-width: 1080px;
 }
@@ -113,6 +113,7 @@ h3 {
       }
       @include media($large) {
          @include span-columns(12);
+         border-bottom: 0px;
          font-size: 1.5em;
          padding: 0.66em;
       }
@@ -133,7 +134,11 @@ h3 {
    @include outer-container;
 
    .works-unit {
-      margin-bottom: 2em;
+      margin-bottom: 4em;
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(6);
+      }
    }
 
    .works-typo {
@@ -145,6 +150,32 @@ h3 {
    .works-image {
       width: 100%;
       height: auto;
+   }
+}
+
+
+.category-out {
+   @include outer-container;
+
+   .category-unit {
+      margin-bottom: 4em;
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(4);
+      }
+   }
+
+   .category-typo {
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.25em;
+      color: gray;
+   }
+
+   .category-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid yellow;
    }
 }
 

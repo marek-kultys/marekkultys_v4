@@ -2,26 +2,31 @@
 ---
 
 
+
 @import "bourbon/bourbon";
 @import "neat/neat";
 
 
+
 {% include fonts.css %}
+
 
 
 $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
 $full: new-breakpoint(min-width 1120px);
 
+$teal: rgb(40, 190, 210);
+$teal-hover: rgb(20, 160, 180);
 
 
 
 body {
-   @include outer-container;
-   //border: 1px solid black;
    font-family: "Roboto", Helvetica, sans-serif;
-   margin: 0px auto;
-   max-width: 1080px;
+   @include outer-container(100%);
+   margin-top: 0px;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 a {
@@ -61,35 +66,82 @@ h3 {
 }
 
 
-.navbar-out {
-   @include outer-container;
 
-   .navbar-in {
-      display: block;
-      text-decoration: none;
-      background-color: #cccccc;
-      @include span-columns(12);
-      border-bottom: 2px solid white;
-      font-size: 1.2em;
-      padding: 0.5em;
-      padding-left: 1em;
-      text-align: left;
-      @include media($medium) {
-         @include span-columns(12);
-         border-bottom: 3px solid white;
-         font-size: 1.33em;
-         padding: 0.66em;
-         padding-left: 1em;
-         text-align: left;
-      }
-      @include media($large) {
-         @include span-columns(4);
-         font-size: 1.5em;
-         padding: 0.66em;
-         text-align: center;
-      }
+.page-full {
+   //border: 1px solid teal;
+   @include outer-container(1080px);
+   text-align: center;
+}
+
+
+
+.page-block {
+   //border: 1px solid orange;
+   @include outer-container;
+   padding: 1em;
+   margin-top: 0px;
+   text-align: left;
+   @include media($full) {
+      padding: 0px;
    }
 }
+
+
+
+.navbar-out {
+   background-color: $teal;
+   @include outer-container(100%);
+   text-align: left;
+   width: 100%;
+   margin-top: 0px;
+   @include media($large) {
+      padding-left: 1em;
+      padding-right: 1em;
+   }
+   @include media($full) {
+      padding: 0em;
+   }
+
+   .navbar-in {
+      @include outer-container;
+
+      .navbar-unit {
+         //border: 1px solid black;
+         display: block;
+         text-decoration: none;
+         background-color: $teal;
+         @include span-columns(12);
+         border-bottom: 2px solid white;
+         font-size: 1.2em;
+         padding: 0.5em;
+         padding-left: 1em;
+         @include media($medium) {
+            @include span-columns(12);
+            border-bottom: 3px solid white;
+            font-size: 1.33em;
+            padding: 0.66em;
+            padding-left: 1em;
+         }
+         @include media($large) {
+            @include span-columns(4);
+            border-bottom: 0px;
+            font-size: 1.5em;
+            padding: 0.66em;
+            padding-left: 0.1em;
+         }
+      }
+      .navbar-unit:hover {
+         background-color: $teal-hover;
+         text-decoration: underline;
+         color: white;
+      }
+   }
+
+   .navbar-typo {
+      color: white;
+   }
+}
+
 
 
 .linkback-out {
@@ -121,23 +173,27 @@ h3 {
 }
 
 
-.page-block {
+
+.divide-two {
+   //border: 1px solid red;
    @include outer-container;
-   margin: 1em;
-   @include media($full) {
-      margin: 0px;
-   }
-}
+   margin-bottom: 2em;
 
-
-.works-out {
-   @include outer-container;
-
-   .works-unit {
-      margin-bottom: 4em;
+   .divide-two-small {
+      //border: 1px solid blue;
       @include span-columns(12);
       @include media($large) {
-         @include span-columns(6);
+         @include span-columns(4);
+         @include shift(-12);
+      }
+   }
+
+   .divide-two-large {
+      //border: 1px dotted blue;
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
+         @include shift(4)
       }
    }
 
@@ -150,41 +206,20 @@ h3 {
    .works-image {
       width: 100%;
       height: auto;
+      margin-bottom: 2em;
    }
 }
 
 
-.category-out {
-   @include outer-container;
 
-   .category-unit {
-      margin-bottom: 4em;
-      @include span-columns(12);
-      @include media($large) {
-         @include span-columns(4);
-      }
-   }
 
-   .category-typo {
-      text-align: left;
-      text-decoration: none;
-      font-size: 1.25em;
-      color: gray;
-   }
 
-   .category-image {
-      width: 100%;
-      height: auto;
-      border: 1px solid yellow;
-   }
-}
 
 
 .copyright-typo {
    font-weight: 300;
    text-align: center;
 }
-
 
 
 

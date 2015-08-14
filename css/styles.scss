@@ -16,8 +16,8 @@ $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
 $full: new-breakpoint(min-width 1120px);
 
-$teal: rgb(40, 190, 210);
-$teal-hover: rgb(20, 160, 180);
+$kolor: rgb(220, 100, 40);
+$kolor-hover: rgba(255, 255, 255, 0.66);
 
 
 
@@ -27,6 +27,7 @@ body {
    margin-top: 0px;
    margin-left: auto;
    margin-right: auto;
+   background-color: $kolor;
 }
 
 a {
@@ -68,16 +69,15 @@ h3 {
 
 
 .page-full {
-   //border: 1px solid teal;
    @include outer-container(1080px);
    text-align: center;
+   min-width: 100%;
+   background-color: white;
 }
 
 
 
 .page-block {
-   //border: 1px solid orange;
-   @include outer-container;
    padding: 1em;
    margin-top: 0px;
    text-align: left;
@@ -89,7 +89,7 @@ h3 {
 
 
 .navbar-out {
-   background-color: $teal;
+   background-color: $kolor;
    @include outer-container(100%);
    text-align: left;
    width: 100%;
@@ -97,20 +97,28 @@ h3 {
    @include media($large) {
       padding-left: 1em;
       padding-right: 1em;
+      border-bottom: 13px solid $kolor;
+      border-top: 13px solid $kolor;
    }
    @include media($full) {
       padding: 0em;
+      border-bottom: 13px solid $kolor;
+      border-top: 13px solid $kolor;
    }
 
    .navbar-in {
       @include outer-container;
+      @include media($full) {
+         border-right: 2px solid white;
+         border-left: 2px solid white;
+      }
 
       .navbar-unit {
-         //border: 1px solid black;
+         @include span-columns(12);
          display: block;
          text-decoration: none;
-         background-color: $teal;
-         @include span-columns(12);
+         background-color: $kolor;
+         font-weight: 400;
          border-bottom: 2px solid white;
          font-size: 1.2em;
          padding: 0.5em;
@@ -120,20 +128,22 @@ h3 {
             border-bottom: 3px solid white;
             font-size: 1.33em;
             padding: 0.66em;
-            padding-left: 1em;
          }
          @include media($large) {
             @include span-columns(4);
+            border-left: 2px solid white;
             border-bottom: 0px;
             font-size: 1.5em;
-            padding: 0.66em;
-            padding-left: 0.1em;
+            font-weight: 300;
+            padding: 0.1em;
+            padding-left: 1em;
          }
       }
-      .navbar-unit:hover {
-         background-color: $teal-hover;
-         text-decoration: underline;
-         color: white;
+      span:hover {
+         //background-color: $kolor-hover;
+         //text-decoration: underline;
+         color: $kolor-hover;
+         //border-bottom: 1px solid white;
       }
    }
 
@@ -144,43 +154,11 @@ h3 {
 
 
 
-.linkback-out {
-   @include outer-container;
-
-   .linkback-in {
-      display: block;
-      text-align: left;
-      padding-left: 25%;
-      text-decoration: none;
-      background-color: #cccccc;
-      @include span-columns(12);
-      border-bottom: 2px solid white;
-      font-size: 1.2em;
-      padding: 0.66em;
-      @include media($medium) {
-         @include span-columns(12);
-         border-bottom: 3px solid white;
-         font-size: 1.33em;
-         padding: 0.66em;
-      }
-      @include media($large) {
-         @include span-columns(12);
-         border-bottom: 0px;
-         font-size: 1.5em;
-         padding: 0.66em;
-      }
-   }
-}
-
-
-
 .divide-two {
-   //border: 1px solid red;
    @include outer-container;
    margin-bottom: 2em;
 
    .divide-two-small {
-      //border: 1px solid blue;
       @include span-columns(12);
       @include media($large) {
          @include span-columns(4);
@@ -189,7 +167,6 @@ h3 {
    }
 
    .divide-two-large {
-      //border: 1px dotted blue;
       @include span-columns(12);
       @include media($large) {
          @include span-columns(8);
@@ -200,7 +177,8 @@ h3 {
    .works-typo {
       text-align: left;
       text-decoration: none;
-      font-size: 1.25em;
+      font-size: 1.5em;
+      font-weight: 400;
    }
 
    .works-image {
@@ -212,13 +190,21 @@ h3 {
 
 
 
-
-
-
-
 .copyright-typo {
-   font-weight: 300;
+   height: 100%;
+   padding-top: 1em;
+   padding-bottom: 1.5em;
+   background-color: white;
    text-align: center;
+   font-weight: 300;
+   font-size: 0.8em;
+   @include media($medium) {
+      font-size: 1em;
+   }
+   @include media($large) {
+      font-size: 1.25em;
+      padding-bottom: 2.5em;
+   }
 }
 
 

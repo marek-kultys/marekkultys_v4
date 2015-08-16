@@ -14,76 +14,102 @@
 
 $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
-$full: new-breakpoint(min-width 1120px);
+$full: new-breakpoint(min-width 1160px);
 
-$kolor: rgb(220, 100, 40);
-$kolor-hover: rgba(255, 255, 255, 0.66);
+$kolor: rgb(56, 136, 136);
+$kolor-hover: rgb(58, 186, 186);
 
 
 
 body {
    font-family: "Roboto", Helvetica, sans-serif;
    @include outer-container(100%);
-   margin-top: 0px;
-   margin-left: auto;
-   margin-right: auto;
+   margin: 0px auto 1em auto;
    background-color: $kolor;
 }
 
 a {
-   font-weight: 300;
+   font-weight: inherit;
    color: inherit;
+   border-bottom: 1px solid $kolor;
+   text-decoration: none;
+}
+
+a:hover {
+   color: $kolor-hover;
+   border-bottom: 1px solid $kolor-hover;
+}
+
+a:active {
+   border: 0px;
 }
 
 p {
    font-weight: 400;
-   font-style: normal;
 }
 
 h1 {
    font-size: 2em;
    font-weight: 400;
-   line-height: 150%;
 }
 
 h2 {
-   font-size: 2em;
-   font-weight: 300;
-   line-height: 150%;
+   font-size: 1.66em;
+   font-weight: 400;
+   margin: 0px;
 }
 
 h3 {
    font-size: 1.2em;
-   line-height: 133%;
+   line-height: 1.40em;
    font-weight: 400;
+   margin: 0.5em 0 0 0;
    @include media($medium) {
-      font-size: 1.33em;
-      line-height: 133%;
+      font-size: 1.4em;
+      line-height: 1.65em;
    }
    @include media($large) {
       font-size: 1.5em;
-      line-height: 150%;
+      line-height: 1.65em;
+   }
+}
+
+h4 {
+   font-size: 1.1em;
+   line-height: 1.3em;
+   font-weight: 400;
+   @include media($medium) {
+      font-size: 1.3em;
+      line-height: 1.4em;
    }
 }
 
 
 
-.page-full {
-   @include outer-container(1080px);
-   text-align: center;
-   min-width: 100%;
+// .page-full {
+//    @include outer-container(1080px);
+//    text-align: center;
+//    min-width: 100%;
+//    background-color: white;
+// }
+//
+//
+//
+// .page-block {
+//    padding: 1em;
+//    margin-top: 0px;
+//    text-align: left;
+//    @include media($full) {
+//       //padding: 0px; [Hashing out allows to integrate multiple nested divs of .page-full + .page-block in one .body]
+//    }
+// }
+
+
+
+section {
    background-color: white;
-}
-
-
-
-.page-block {
    padding: 1em;
-   margin-top: 0px;
-   text-align: left;
-   @include media($full) {
-      padding: 0px;
-   }
+   margin: 0px;
 }
 
 
@@ -95,68 +121,89 @@ h3 {
    width: 100%;
    margin-top: 0px;
    @include media($large) {
-      padding-left: 1em;
-      padding-right: 1em;
-      border-bottom: 13px solid $kolor;
-      border-top: 13px solid $kolor;
+      padding: 0em 1em 0em 1em;
+      //border-bottom: 13px solid $kolor;
+      //border-top: 13px solid $kolor;
    }
    @include media($full) {
       padding: 0em;
-      border-bottom: 13px solid $kolor;
-      border-top: 13px solid $kolor;
+      //border-bottom: 13px solid $kolor;
+      //border-top: 13px solid $kolor;
    }
 
    .navbar-in {
       @include outer-container;
+      background-color: $kolor;
+      font-weight: 400;
+      display: block;
+      //This adds outside dividers in navbar
       @include media($full) {
          border-right: 2px solid white;
          border-left: 2px solid white;
       }
 
-      .navbar-unit {
+      .navbar-all {
          @include span-columns(12);
-         display: block;
-         text-decoration: none;
-         background-color: $kolor;
-         font-weight: 400;
          border-bottom: 2px solid white;
          font-size: 1.2em;
-         padding: 0.5em;
-         padding-left: 1em;
+         height: 2.4em;
+         padding: 0.6em 0 0 1em;
          @include media($medium) {
-            @include span-columns(12);
             border-bottom: 3px solid white;
             font-size: 1.33em;
-            padding: 0.66em;
          }
          @include media($large) {
-            @include span-columns(4);
             border-left: 2px solid white;
             border-bottom: 0px;
             font-size: 1.5em;
             font-weight: 300;
-            padding: 0.1em;
-            padding-left: 1em;
          }
       }
-      span:hover {
-         //background-color: $kolor-hover;
-         //text-decoration: underline;
-         color: $kolor-hover;
-         //border-bottom: 1px solid white;
+      
+      .navbar-all:hover {
+         background-color: $kolor-hover;
+      }
+
+      .navbar-unit {
+         @include span-columns(12);
+         border-bottom: 2px solid white;
+         font-size: 1.2em;
+         height: 2.4em;
+         padding: 0.6em 0 0 1em;
+         @include media($medium) {
+            @include span-columns(12);
+            border-bottom: 3px solid white;
+            font-size: 1.33em;
+         }
+         @include media($large) {
+            @include outer-container;
+            @include span-columns(4, block-collapse);
+            border-left: 2px solid white;
+            border-bottom: 0px;
+            font-size: 1.5em;
+            font-weight: 300;
+         }
+      }
+
+      .navbar-unit:hover {
+         background-color: $kolor-hover;
       }
    }
 
    .navbar-typo {
       color: white;
    }
+
+   // a {
+   //    border: 0px;
+   // }
 }
 
 
 
 .divide-two {
    @include outer-container;
-   margin-bottom: 2em;
+   margin-bottom: 5em;
 
    .divide-two-small {
       @include span-columns(12);
@@ -174,17 +221,26 @@ h3 {
       }
    }
 
-   .works-typo {
-      text-align: left;
-      text-decoration: none;
-      font-size: 1.5em;
-      font-weight: 400;
+   .works-title {
+      color: black;
+   }
+
+   .works-title:hover {
+      color: $kolor-hover;
+      border-bottom: 1px solid $kolor-hover;
+   }
+
+   .works-image-link {
+      border: 0px;
+   }
+
+   .works-image-link:hover {
+      border: 1px solid black;
    }
 
    .works-image {
       width: 100%;
       height: auto;
-      margin-bottom: 2em;
    }
 }
 
@@ -192,8 +248,7 @@ h3 {
 
 .copyright-typo {
    height: 100%;
-   padding-top: 1em;
-   padding-bottom: 1.5em;
+   padding: 1em 0 1.5em 0;
    background-color: white;
    text-align: center;
    font-weight: 300;

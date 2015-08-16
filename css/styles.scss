@@ -28,6 +28,12 @@ body {
    background-color: $kolor;
 }
 
+section {
+   background-color: white;
+   padding: 1em;
+   margin: 0px;
+}
+
 a {
    font-weight: inherit;
    color: inherit;
@@ -106,14 +112,6 @@ h4 {
 
 
 
-section {
-   background-color: white;
-   padding: 1em;
-   margin: 0px;
-}
-
-
-
 .navbar-out {
    background-color: $kolor;
    @include outer-container(100%);
@@ -159,7 +157,7 @@ section {
             font-weight: 300;
          }
       }
-      
+
       .navbar-all:hover {
          background-color: $kolor-hover;
       }
@@ -221,26 +219,18 @@ section {
       }
    }
 
-   .works-title {
-      color: black;
-   }
-
    .works-title:hover {
       color: $kolor-hover;
       border-bottom: 1px solid $kolor-hover;
    }
 
-   .works-image-link {
-      border: 0px;
-   }
-
-   .works-image-link:hover {
-      border: 1px solid black;
+   img {
+      width: 100%;
+      height: auto;
    }
 
    .works-image {
-      width: 100%;
-      height: auto;
+      border: 0px;
    }
 }
 

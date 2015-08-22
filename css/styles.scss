@@ -28,6 +28,9 @@ body {
    background-color: $kolor;
 }
 
+main {
+}
+
 section {
    background-color: white;
    padding: 1em;
@@ -56,7 +59,7 @@ p {
 
 h1 {
    font-size: 2em;
-   font-weight: 400;
+   font-weight: 500;
 }
 
 h2 {
@@ -66,13 +69,13 @@ h2 {
 }
 
 h3 {
-   font-size: 1.2em;
-   line-height: 1.40em;
+   font-size: 1em;
+   line-height: 1.2em;
    font-weight: 400;
    margin: 0.5em 0 0 0;
    @include media($medium) {
-      font-size: 1.4em;
-      line-height: 1.65em;
+      font-size: 1.3em;
+      line-height: 1.5em;
    }
    @include media($large) {
       font-size: 1.5em;
@@ -84,6 +87,7 @@ h4 {
    font-size: 1.1em;
    line-height: 1.3em;
    font-weight: 400;
+   font-style: italic;
    @include media($medium) {
       font-size: 1.3em;
       line-height: 1.4em;
@@ -115,7 +119,7 @@ h4 {
 .navbar-out {
    background-color: $kolor;
    @include outer-container(100%);
-   text-align: left;
+   text-align: center;
    width: 100%;
    margin-top: 0px;
    @include media($large) {
@@ -142,15 +146,21 @@ h4 {
 
       .navbar-all {
          @include span-columns(12);
-         border-bottom: 2px solid white;
+         //border-bottom: 2px solid white;
          font-size: 1.2em;
-         height: 2.4em;
-         padding: 0.6em 0 0 1em;
+         height: 3.6em;
+         padding: 1.2em 0 0 0;
+         border-left: 2px solid white;
          @include media($medium) {
-            border-bottom: 3px solid white;
+            //border-bottom: 3px solid white;
+            text-align: left;
+            padding: 1.2em 0 0 1em;
             font-size: 1.33em;
          }
          @include media($large) {
+            height: 2.4em;
+            text-align: left;
+            padding: 0.8em 0 0 1em;
             border-left: 2px solid white;
             border-bottom: 0px;
             font-size: 1.5em;
@@ -163,20 +173,22 @@ h4 {
       }
 
       .navbar-unit {
-         @include span-columns(12);
-         border-bottom: 2px solid white;
+         @include span-columns(4, block-collapse);
+         //border-bottom: 2px solid white;
          font-size: 1.2em;
-         height: 2.4em;
-         padding: 0.6em 0 0 1em;
+         height: 3.6em;
+         padding: 1.2em 0 0 0;
+         border-left: 2px solid white;
          @include media($medium) {
-            @include span-columns(12);
-            border-bottom: 3px solid white;
+            //border-bottom: 3px solid white;
+            text-align: left;
+            padding: 1.2em 0 0 1em;
             font-size: 1.33em;
          }
          @include media($large) {
-            @include outer-container;
-            @include span-columns(4, block-collapse);
-            border-left: 2px solid white;
+            height: 2.4em;
+            text-align: left;
+            padding: 0.8em 0 0 1em;
             border-bottom: 0px;
             font-size: 1.5em;
             font-weight: 300;
@@ -199,19 +211,18 @@ h4 {
 
 
 
-.divide-two {
+.divide {
    @include outer-container;
-   margin-bottom: 5em;
+   margin-bottom: 3em;
 
-   .divide-two-small {
+   .divide-three-small {
       @include span-columns(12);
       @include media($large) {
          @include span-columns(4);
          @include shift(-12);
       }
    }
-
-   .divide-two-large {
+   .divide-three-large {
       @include span-columns(12);
       @include media($large) {
          @include span-columns(8);
@@ -219,9 +230,43 @@ h4 {
       }
    }
 
+   .divide-two-small {
+      @include outer-container ;
+
+      .divide-two-small-unit {
+         @include span-columns(12);
+         @include media($large) {
+            @include span-columns(6);
+         }
+      }
+   }
+   .divide-two-large {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(12);
+      }
+   }
+   
+   .divide-one-small {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
+      }
+   }
+   .divide-one-large {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(12);
+      }
+   }
+
    .works-title:hover {
       color: $kolor-hover;
       border-bottom: 1px solid $kolor-hover;
+   }
+
+   .works-text:hover {
+      color: black;
    }
 
    img {
@@ -233,7 +278,6 @@ h4 {
       border: 0px;
    }
 }
-
 
 
 .copyright-typo {

@@ -1,17 +1,29 @@
 <div id="navbar" class="navbar-out">
    <div class="navbar-in">
 
-      <a href="/about" class="navbar-unit" style="border-left: 0px;">
-         <span class="navbar-typo">About</span>
-      </a>
 
-      <a data-scroll href="#work" class="navbar-unit">
-         <span class="navbar-typo">Work</span>
-      </a>
+      {% if page.label == "home" %}
 
-      <a data-scroll href="#contact" class="navbar-unit">
-         <span class="navbar-typo">Contact</span>
-      </a>
+         <a href="/about" class="navbar-unit" style="border-left: 0px;">
+            <span class="navbar-typo">About</span>
+         </a>
+
+         <a data-scroll href="#work" class="navbar-unit">
+            <span class="navbar-typo">Work</span>
+         </a>
+
+         <a data-scroll href="#contact" class="navbar-unit">
+            <span class="navbar-typo">Contact</span>
+         </a>
+
+      {% else %}
+
+         <a href="/" class="navbar-all" style="border-left: 0px;">
+            <span class="navbar-typo">Marek Kultys</span>
+         </a>
+
+      {% endif %}
+
 
    </div>
 </div><!--navbar-out-->

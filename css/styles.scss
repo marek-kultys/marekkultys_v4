@@ -2,25 +2,31 @@
 ---
 
 
-
+// Import Bourbon and Neat
 @import "bourbon/bourbon";
 @import "neat/neat";
 
 
 
+// Import font
 {% include fonts.css %}
 
 
 
+// Declare breakpoints
 $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
 $full: new-breakpoint(min-width 1160px);
 
+
+
+// Declare variables
 $kolor: rgb(56, 136, 136);
 $kolor-hover: rgb(58, 186, 186);
 
 
 
+// Define globals
 body {
    font-family: "Roboto", Helvetica, sans-serif;
    @include outer-container(100%);
@@ -96,26 +102,7 @@ h4 {
 
 
 
-// .page-full {
-//    @include outer-container(1080px);
-//    text-align: center;
-//    min-width: 100%;
-//    background-color: white;
-// }
-//
-//
-//
-// .page-block {
-//    padding: 1em;
-//    margin-top: 0px;
-//    text-align: left;
-//    @include media($full) {
-//       //padding: 0px; [Hashing out allows to integrate multiple nested divs of .page-full + .page-block in one .body]
-//    }
-// }
-
-
-
+// Define classes
 .navbar-out {
    background-color: $kolor;
    @include outer-container(100%);
@@ -246,7 +233,7 @@ h4 {
          @include span-columns(12);
       }
    }
-   
+
    .divide-one-small {
       @include span-columns(12);
       @include media($large) {
@@ -298,12 +285,12 @@ h4 {
 
 
 
-//FIXES
+// Fixing MS viewport
 @-ms-viewport{
   width: device-width;
 }
 
-//FIX for jumping scroll bar when page overflows
+// Fixing jumping scroll bar when page overflows
 html {
     overflow-y: scroll;
 	 overflow-x: ignore;

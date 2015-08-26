@@ -1,94 +1,88 @@
-<div class="page-full">
-   <div class="page-block">
+<div id="category" class="divide">
+   <div class="divide-three-large">
 
 
-      <div id="categories" class="divide">
-         <div class="divide-three-large">
-            <h3>See other:</h3>
+      <h3>See other:</h3>
 
 
 <!-- 2+3D -->
-            {% if page.label == "2plus3d" %}
-               <a href="/publications">publications</a>
-            {% endif %}
+      {% if page.label == "2plus3d" %}
+         <a href="/publications">publications</a>
+      {% endif %}
 
 
 <!-- BENTO•LAB -->
-            {% if page.label == "bento" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>
-            {% endif %}
+      {% if page.label == "bento" %}
+         <a href="/projects">projects</a> and
+         <a href="/prototypes">prototypes</a>
+      {% endif %}
 
 
 <!-- VISWEEK -->
-            {% if page.label == "visweek" %}
-               <a href="/workshops">workshops</a>,
-               <a href="/publications">publications</a>,
-               <a href="/talks">presentations</a>
-            {% endif %}
+      {% if page.label == "visweek" %}
+         <a href="/workshops">workshops</a>,
+         <a href="/publications">publications</a>, and
+         <a href="/talks">presentations</a>
+      {% endif %}
 
 
 <!-- HUMAN FACTORS -->
-            {% if page.label == "factors" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>
-            {% endif %}
+      {% if page.label == "factors" %}
+         <a href="/projects">projects</a> and
+         <a href="/prototypes">prototypes</a>
+      {% endif %}
 
 
 <!-- IMMUNOGRAPHICS -->
-            {% if page.label == "immuno" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>,
-               <a href="/talks">presentations</a>
-            {% endif %}
+      {% if page.label == "immuno" %}
+         <a href="/projects">projects</a> and
+         <!-- <a href="/prototypes">prototypes</a>, -->
+         <a href="/talks">presentations</a>
+      {% endif %}
 
 
 <!-- SETI -->
-            {% if page.label == "seti" %}
-               <a href="/writing">publications</a>,
-               <a href="/talks">presentations</a>
-            {% endif %}
+      {% if page.label == "seti" %}
+         <a href="/writing">publications</a> and
+         <a href="/talks">presentations</a>
+      {% endif %}
 
 
 <!-- MITOSIS & MEIOSIS -->
-            {% if page.label == "mitosis" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>,
-               <a href="/talks">presentations</a>
-            {% endif %}
+      {% if page.label == "mitosis" %}
+         <a href="/projects">projects</a> and
+         <!-- <a href="/prototypes">prototypes</a>, -->
+         <a href="/talks">presentations</a>
+      {% endif %}
 
 
-            {% if page.label == "paradoxes" %}
-               <a href="/workshops">workshops</a>
-            {% endif %}
+      {% if page.label == "paradoxes" %}
+         <a href="/workshops">workshops</a>
+      {% endif %}
 
 
 <!-- SEQUENCE BUNDLES -->
-            {% if page.label == "bundles" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>,
-               <a href="/publications">publications</a>,
-               <a href="/talks">presentations</a>
-            {% endif %}
+      {% if page.label == "bundles" %}
+         <a href="/projects">projects</a>,
+         <a href="/prototypes">prototypes</a>,
+         <a href="/publications">publications</a>, and
+         <a href="/talks">presentations</a>
+      {% endif %}
 
 
 <!-- SEX-SHOP -->
-            {% if page.label == "sexshop" %}
-               <a href="/projects">projects</a>
-            {% endif %}
+      {% if page.label == "sexshop" %}
+         <a href="/projects">projects</a>
+      {% endif %}
 
 
 <!-- THE END OF HEARING -->
-            {% if page.label == "hearing" %}
-               <a href="/projects">projects</a>,
-               <a href="/prototypes">prototypes</a>,
-               <a href="/publications">publications</a>
-            {% endif %}
-
-         </div>
-      </div><!--divide-three-->
+      {% if page.label == "hearing" %}
+         <a href="/projects">projects</a>,
+         <a href="/prototypes">prototypes</a>, and
+         <a href="/publications">publications</a>
+      {% endif %}
 
 
-   </div><!--page-block-->
-
-</div><!--page-full-->
+   </div>
+</div><!--divide-->

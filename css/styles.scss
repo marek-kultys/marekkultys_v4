@@ -75,8 +75,8 @@ h2 {
 }
 
 h3 {
-   font-size: 1em;
-   line-height: 1.2em;
+   font-size: 1.2em;
+   line-height: 1.4em;
    font-weight: 400;
    margin: 0.5em 0 0 0;
    @include media($medium) {
@@ -98,6 +98,25 @@ h4 {
       font-size: 1.3em;
       line-height: 1.4em;
    }
+}
+
+.fontello-close-icon {
+   font-size: 1.1em;
+   line-height: inherit;
+}
+
+.creative-commons {
+   font-weight: 700;
+   font-size: 1em;
+   line-height: 2.4em;
+}
+
+.gap {
+   min-height: 2em;
+}
+
+.gap2 {
+   min-height: 4em;
 }
 
 
@@ -200,52 +219,71 @@ h4 {
 
 .divide {
    @include outer-container;
-   margin-bottom: 3em;
+   margin-bottom: 1em;
+   @include media($medium) {
+      margin-bottom: 3em;
+   }
+   @include media($large) {
+      margin-bottom: 7em;
+   }
 
-   .divide-three-small {
+   .divide-one-third-left {
       @include span-columns(12);
+      margin-top: 1em;
       @include media($large) {
+         margin-top: 0;
          @include span-columns(4);
-         @include shift(-12);
-      }
-   }
-   .divide-three-large {
-      @include span-columns(12);
-      @include media($large) {
-         @include span-columns(8);
-         @include shift(4)
+         //@include shift(12);
       }
    }
 
-   .divide-two-small {
+   .divide-half {
       @include outer-container ;
 
-      .divide-two-small-unit {
+      .divide-half-unit {
          @include span-columns(12);
          @include media($large) {
             @include span-columns(6);
          }
       }
    }
-   .divide-two-large {
+
+   .divide-two-thirds-left {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
+      }
+   }
+
+   .divide-two-thirds-right {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
+         @include shift(4);
+      }
+   }
+
+   .divide-full-one {
       @include span-columns(12);
       @include media($large) {
          @include span-columns(12);
       }
    }
 
-   .divide-one-small {
+   .divide-desktop-hide {
       @include span-columns(12);
+      @include media($large) {
+         display: none;
+      }
+   }
+
+   .divide-mobile-hide {
+      display: none;
       @include media($large) {
          @include span-columns(8);
       }
    }
-   .divide-one-large {
-      @include span-columns(12);
-      @include media($large) {
-         @include span-columns(12);
-      }
-   }
+
 
    .works-title:hover {
       color: $kolor-hover;
@@ -264,6 +302,11 @@ h4 {
    .works-image {
       border: 0px;
    }
+
+   // .caption {
+   //    padding-bottom: 1em;
+   //    border-bottom: 1px solid black;
+   // }
 }
 
 

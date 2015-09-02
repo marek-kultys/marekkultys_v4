@@ -63,6 +63,10 @@ p {
    font-weight: 400;
 }
 
+ul {
+   margin-top: 0.33em;
+}
+
 h1 {
    font-size: 2em;
    font-weight: 500;
@@ -270,14 +274,14 @@ h4 {
       }
    }
 
-   .divide-desktop-hide {
+   .divide-hide-desktop {
       @include span-columns(12);
       @include media($large) {
          display: none;
       }
    }
 
-   .divide-mobile-hide {
+   .divide-hide-mobile {
       display: none;
       @include media($large) {
          @include span-columns(8);

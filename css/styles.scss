@@ -8,8 +8,10 @@
 
 
 
+
 // Import font
 {% include fonts.css %}
+
 
 
 
@@ -20,13 +22,16 @@ $full: new-breakpoint(min-width 1160px);
 
 
 
+
 // Declare variables
 $kolor: rgb(56, 136, 136);
 $kolor-hover: rgb(58, 186, 186);
+$nav-bar-line: 2px solid white; // One place to change style of all navabr divider lines
 
 
 
-// Define globals
+
+// Customise Tags
 body {
    font-family: "Roboto", Helvetica, sans-serif;
    @include outer-container(100%);
@@ -41,6 +46,9 @@ section {
    background-color: white;
    padding: 1em;
    margin: 0px;
+   @include media($large) {
+      padding: 2em 1em 2em 1em;
+   }
 }
 
 a {
@@ -58,6 +66,10 @@ a:hover {
 a:active {
    border: 0px;
 }
+
+// a:visited {
+//    color: #555555;
+// }
 
 p {
    font-weight: 400;
@@ -82,7 +94,7 @@ h3 {
    font-size: 1.2em;
    line-height: 1.4em;
    font-weight: 400;
-   margin: 0.5em 0 0 0;
+   margin-top: 0.5em; // Not sure what this does...?
    @include media($medium) {
       font-size: 1.3em;
       line-height: 1.5em;
@@ -104,77 +116,64 @@ h4 {
    }
 }
 
-.fontello-close-icon {
-   font-size: 1.1em;
-   line-height: inherit;
-}
-
-.creative-commons {
-   font-weight: 700;
+h5 {
    font-size: 1em;
-   line-height: 2.4em;
+   line-height: 1.3em;
+   font-weight: 700;
+   @include media($medium) {
+      font-size: 1.1em;
+      line-height: 1.4em;
+   }
 }
 
-.gap {
-   min-height: 2em;
-}
-
-.gap2 {
-   min-height: 4em;
-}
 
 
 
 // Define classes
 .navbar-out {
    background-color: $kolor;
-   @include outer-container(100%);
-   text-align: center;
    width: 100%;
    margin-top: 0px;
+   font-weight: 400;
+   text-align: center;
+   @include outer-container(100%);
    @include media($large) {
-      padding: 0em 1em 0em 1em;
-      //border-bottom: 13px solid $kolor;
-      //border-top: 13px solid $kolor;
+      padding-right: 1em;
+      padding-left: 1em;
    }
    @include media($full) {
       padding: 0em;
-      //border-bottom: 13px solid $kolor;
-      //border-top: 13px solid $kolor;
    }
 
    .navbar-in {
-      @include outer-container;
-      background-color: $kolor;
-      font-weight: 400;
       display: block;
-      //This adds outside dividers in navbar
+      @include outer-container;
       @include media($full) {
-         border-right: 2px solid white;
-         border-left: 2px solid white;
+         border-right: $nav-bar-line; // This adds far right divider line in navbar
+         border-left: $nav-bar-line; // This adds far left divider line in navbar
       }
 
       .navbar-all {
-         @include span-columns(12);
-         //border-bottom: 2px solid white;
-         font-size: 1.2em;
          height: 3.6em;
-         padding: 1.2em 0 0 0;
-         border-left: 2px solid white;
+         font-size: 1.2em;
+         padding-top: 1.2em;
+         border-left: $nav-bar-line;
+         @include span-columns(12);
          @include media($medium) {
-            //border-bottom: 3px solid white;
-            text-align: left;
-            padding: 1.2em 0 0 1em;
             font-size: 1.33em;
+            text-align: left;
+            padding-top: 1.2em;
+            padding-left: 1em;
          }
          @include media($large) {
             height: 2.4em;
-            text-align: left;
-            padding: 0.8em 0 0 1em;
-            border-left: 2px solid white;
-            border-bottom: 0px;
             font-size: 1.5em;
             font-weight: 300;
+            text-align: left;
+            padding-top: 0.8em;
+            padding-left: 1em;
+            border-bottom: 0px;
+            border-left: $nav-bar-line;
          }
       }
 
@@ -183,25 +182,26 @@ h4 {
       }
 
       .navbar-unit {
-         @include span-columns(4, block-collapse);
-         //border-bottom: 2px solid white;
-         font-size: 1.2em;
          height: 3.6em;
-         padding: 1.2em 0 0 0;
-         border-left: 2px solid white;
+         font-size: 1.2em;
+         padding-top: 1.2em;
+         border-left: $nav-bar-line;
+         border-bottom: $nav-bar-line;
+         @include span-columns(4, block-collapse);
          @include media($medium) {
-            //border-bottom: 3px solid white;
-            text-align: left;
-            padding: 1.2em 0 0 1em;
             font-size: 1.33em;
+            text-align: left;
+            padding-top: 1.2em;
+            padding-left: 1em;
          }
          @include media($large) {
             height: 2.4em;
             text-align: left;
-            padding: 0.8em 0 0 1em;
-            border-bottom: 0px;
             font-size: 1.5em;
             font-weight: 300;
+            padding-top: 0.8em;
+            padding-left: 1em;
+            border-bottom: 0px;
          }
       }
 
@@ -213,31 +213,61 @@ h4 {
    .navbar-typo {
       color: white;
    }
-
-   // a {
-   //    border: 0px;
-   // }
 }
 
 
 
+
+.divider-line {
+   margin-top: 4em; // Includes margin-bottom from previous .devide
+   margin-bottom: 4em;
+   border-bottom: 3px dotted #dddddd;
+   @include outer-container(100%); // Strech div throughout entire section width
+   @include media($large) {
+      margin-top: 6em; // Includes margin-bottom from previous .devide
+      margin-bottom: 6em;
+   }
+}
+
+
+
+
 .divide {
+   margin-bottom: 2em;
    @include outer-container;
-   margin-bottom: 1em;
    @include media($medium) {
-      margin-bottom: 3em;
    }
    @include media($large) {
-      margin-bottom: 7em;
+      margin-bottom: 4em;
+   }
+
+   .divide-home-one-third {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(4);
+         @include shift(-12);
+      }
+   }
+
+   .divide-home-two-thirds {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
+         @include shift(4);
+      }
    }
 
    .divide-one-third-left {
       @include span-columns(12);
-      margin-top: 1em;
       @include media($large) {
-         margin-top: 0;
          @include span-columns(4);
-         //@include shift(12);
+      }
+   }
+
+   .divide-two-thirds-left {
+      @include span-columns(12);
+      @include media($large) {
+         @include span-columns(8);
       }
    }
 
@@ -249,21 +279,6 @@ h4 {
          @include media($large) {
             @include span-columns(6);
          }
-      }
-   }
-
-   .divide-two-thirds-left {
-      @include span-columns(12);
-      @include media($large) {
-         @include span-columns(8);
-      }
-   }
-
-   .divide-two-thirds-right {
-      @include span-columns(12);
-      @include media($large) {
-         @include span-columns(8);
-         @include shift(4);
       }
    }
 
@@ -301,22 +316,30 @@ h4 {
    img {
       width: 100%;
       height: auto;
+      //margin-top: 0.5em;
+      margin-bottom: 1em;
+      @include media($large) {
+         margin-bottom: 0.5em;
+      }
+      //padding-right: 2px;
    }
+
+   // img:hover {
+   //    padding-right: 0px;
+   //    border-right: 2px solid $kolor-hover;
+   // }
 
    .works-image {
       border: 0px;
    }
-
-   // .caption {
-   //    padding-bottom: 1em;
-   //    border-bottom: 1px solid black;
-   // }
 }
+
+
 
 
 .copyright-typo {
    height: 100%;
-   padding: 1em 0 1.5em 0;
+   padding-bottom: 2em;
    background-color: white;
    text-align: center;
    font-weight: 300;
@@ -329,6 +352,18 @@ h4 {
       padding-bottom: 2.5em;
    }
 }
+
+.fontello-close-icon {
+   font-size: 1.1em;
+   line-height: inherit;
+}
+
+.creative-commons {
+   font-weight: 700;
+   font-size: 1em;
+   line-height: 2.4em;
+}
+
 
 
 

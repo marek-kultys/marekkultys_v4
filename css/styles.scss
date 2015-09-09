@@ -126,6 +126,15 @@ h5 {
    }
 }
 
+h6 {
+   color: #333333;
+   font-size: 0.75em;
+   font-weight: 300;
+   @include media($large) {
+      font-size: 1em;
+   }
+}
+
 
 
 
@@ -219,8 +228,8 @@ h5 {
 
 
 .divider-line {
-   margin-top: 4em; // Includes margin-bottom from previous .devide
-   margin-bottom: 4em;
+   margin-top: 2em; // Includes margin-bottom from previous .devide
+   margin-bottom: 2em;
    border-bottom: 3px dotted #dddddd;
    @include outer-container(100%); // Strech div throughout entire section width
    @include media($large) {
@@ -250,6 +259,7 @@ h5 {
    }
 
    .divide-home-two-thirds {
+      //margin-bottom: 2em;
       @include span-columns(12);
       @include media($large) {
          @include span-columns(8);
@@ -317,7 +327,7 @@ h5 {
       width: 100%;
       height: auto;
       //margin-top: 0.5em;
-      margin-bottom: 1em;
+      margin-bottom: 0.66em;
       @include media($large) {
          margin-bottom: 0.5em;
       }
@@ -344,6 +354,7 @@ h5 {
    text-align: center;
    font-weight: 300;
    font-size: 0.8em;
+   line-height: 1.6em;
    @include media($medium) {
       font-size: 1em;
    }
@@ -362,6 +373,12 @@ h5 {
    font-weight: 700;
    font-size: 1em;
    line-height: 2.4em;
+}
+
+.image-credit {
+   text-align: right;
+   margin-top: 0px;
+   float: right;
 }
 
 

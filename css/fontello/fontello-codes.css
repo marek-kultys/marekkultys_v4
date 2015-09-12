@@ -1,4 +1,5 @@
 
-.icon-cc:before { content: '\e800'; } /* '' */
+.icon-cc-sa:before { content: '\e800'; } /* '' */
 .icon-cc-by:before { content: '\e801'; } /* '' */
-.icon-cc-sa:before { content: '\e802'; } /* '' */
+.icon-cc:before { content: '\e802'; } /* '' */
+.icon-more2:before { content: '\e803'; } /* '' */

@@ -313,6 +313,17 @@ h6 {
       }
    }
 
+   .divide-three {
+      margin-bottom: 2em;
+      @include outer-container;
+      .divide-three-thirds {
+         @include span-columns(12);
+         @include media($large) {
+            @include span-columns(4);
+         }
+      }
+   }
+
 
    .works-title:hover {
       color: $kolor-hover;
@@ -366,7 +377,7 @@ h6 {
 
 .fontello-close-icon {
    font-size: 1.1em;
-   line-height: inherit;
+   line-height: 1.1em;
 }
 
 .creative-commons {
@@ -379,6 +390,16 @@ h6 {
    text-align: right;
    margin-top: 0px;
    float: right;
+}
+
+.fontello-home-more {
+   font-size: 1.8em;
+   float: left;
+}
+
+.passive-link:hover {
+   color: black;
+   decoration: none;
 }
 
 

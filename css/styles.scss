@@ -283,11 +283,22 @@ h6 {
 
    .divide-half {
       @include outer-container ;
-
       .divide-half-unit {
+         margin-bottom: 1em;
          @include span-columns(12);
          @include media($large) {
             @include span-columns(6);
+         }
+      }
+   }
+
+   .divide-third {
+      @include outer-container ;
+      .divide-third-unit {
+         margin-bottom: 1em;
+         @include span-columns(12);
+         @include media($large) {
+            @include span-columns(4);
          }
       }
    }
@@ -313,10 +324,10 @@ h6 {
       }
    }
 
-   .divide-three {
+   .divide-categories {
       margin-bottom: 2em;
       @include outer-container;
-      .divide-three-thirds {
+      .divide-categories-unit {
          @include span-columns(12);
          @include media($large) {
             @include span-columns(4);
@@ -390,6 +401,11 @@ h6 {
    text-align: right;
    margin-top: 0px;
    float: right;
+}
+
+.image-with-border {
+   border: 1px solid gray;
+   border-bottom: 4px solid gray;
 }
 
 .fontello-home-more {

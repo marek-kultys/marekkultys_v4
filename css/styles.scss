@@ -228,12 +228,12 @@ h6 {
 
 
 .divider-line {
-   margin-top: 2em; // Includes margin-bottom from previous .devide
-   margin-bottom: 2em;
+   margin-top: 3em; // Includes margin-bottom from previous .divide
+   margin-bottom: 3em;
    border-bottom: 3px dotted #dddddd;
    @include outer-container(100%); // Strech div throughout entire section width
    @include media($large) {
-      margin-top: 6em; // Includes margin-bottom from previous .devide
+      margin-top: 6em; // Includes margin-bottom from previous .divide
       margin-bottom: 6em;
    }
 }
@@ -284,7 +284,6 @@ h6 {
    .divide-half {
       @include outer-container ;
       .divide-half-unit {
-         margin-bottom: 1em;
          @include span-columns(12);
          @include media($large) {
             @include span-columns(6);
@@ -295,7 +294,6 @@ h6 {
    .divide-third {
       @include outer-container ;
       .divide-third-unit {
-         margin-bottom: 1em;
          @include span-columns(12);
          @include media($large) {
             @include span-columns(4);

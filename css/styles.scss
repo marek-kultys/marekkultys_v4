@@ -87,14 +87,14 @@ h1 {
 h2 {
    font-size: 1.66em;
    font-weight: 400;
-   margin: 0px;
+   margin: 0em;
+   margin-bottom: 1em;
 }
 
 h3 {
    font-size: 1.2em;
    line-height: 1.4em;
    font-weight: 400;
-   margin-top: 0.5em; // Not sure what this does...?
    @include media($medium) {
       font-size: 1.3em;
       line-height: 1.5em;
@@ -110,6 +110,7 @@ h4 {
    line-height: 1.3em;
    font-weight: 400;
    font-style: italic;
+   margin-top: 0.1em;
    @include media($medium) {
       font-size: 1.3em;
       line-height: 1.4em;
@@ -282,7 +283,7 @@ h6 {
    }
 
    .divide-half {
-      @include outer-container ;
+      @include outer-container;
       .divide-half-unit {
          @include span-columns(12);
          @include media($large) {
@@ -292,11 +293,13 @@ h6 {
    }
 
    .divide-third {
-      @include outer-container ;
+      @include outer-container;
       .divide-third-unit {
          @include span-columns(12);
+         // @include omega(2n);
          @include media($large) {
             @include span-columns(4);
+            // @include omega(3n);
          }
       }
    }

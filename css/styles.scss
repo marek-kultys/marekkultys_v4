@@ -370,6 +370,16 @@ h6 {
 
 
 
+.hide-mobile {
+   display: none;
+   @include media($large) {
+      display: block;
+   }
+}
+
+
+
+
 .copyright-typo {
    height: 100%;
    padding-bottom: 2em;

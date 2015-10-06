@@ -15,22 +15,18 @@
 
 	<body>
 
+		<nav>
+			{% include navbar.html %}
+		</nav>
+
 		<main>
 
-			{% include navbar.html %}
-
 			<section>
-
 				{% include about.html %}
-
 				{% include contact.html %}
-
-				{% include divider.html %}
-
-				{{ content }}
-
 			</section>
 
+			{{ content }}
 			{% include copyright.html %}
 
 		</main>

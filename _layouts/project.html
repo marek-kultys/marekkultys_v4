@@ -15,29 +15,26 @@
 
 	<body>
 
+		<nav>
+			{% include navbar.html %}
+		</nav>
+
 		<main>
 
-			{% include navbar.html %}
-
 			<section>
-
 				{% include about.html %}
+			</section>
 
-				{% include divider.html %}
+			{{ content }}
 
-				{{ content }}
-
-				{% include divider.html %}
-
+			<section id="categories">
 				{% include categories.html %}
-
 				{% include back-top.html %}
-
 			</section>
 
 			{% include copyright.html %}
 
-		<main>
+		</main>
 
 		{% include scripts.html %}
 

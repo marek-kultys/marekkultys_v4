@@ -15,25 +15,24 @@
 
 	<body>
 
+		<nav>
+			{% include navbar.html %}
+		</nav>
+
 		<main>
 
-			{% include navbar.html %}
-
 			<section>
-
 				{% include about.html %}
+			</section>
 
+			<section id="works">
 				{% include works.html %}
-
-				{{ content }}
-
 				{% include back-top.html %}
-
 			</section>
 
 			{% include copyright.html %}
 
-		<main>
+		</main>
 
 		{% include scripts.html %}
 

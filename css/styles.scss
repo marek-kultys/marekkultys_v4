@@ -24,8 +24,7 @@ $full: new-breakpoint(min-width 1160px);
 
 
 // Declare variables
-$kolor: rgb(56, 136, 136);
-$kolor-hover: rgb(58, 186, 186);
+$kolor: #a4a4a4;
 $nav-bar-line: 1px solid black; // One place to change style of all navabr divider lines
 
 
@@ -59,8 +58,8 @@ a {
 }
 
 a:hover {
-   color: $kolor-hover;
-   border-bottom: 1px solid $kolor-hover;
+   color: $kolor;
+   border-bottom: 1px solid $kolor;
 }
 
 a:active {
@@ -87,8 +86,9 @@ h1 {
 
 h2 {
    font-size: 1.66em;
-   font-weight: 400;
+   font-weight: 500;
    margin: 0em;
+   margin-top: 0.2em;
    margin-bottom: 1em;
 }
 
@@ -189,7 +189,7 @@ h6 {
       }
 
       .navbar-all:hover {
-         background-color: $kolor-hover;
+         background-color: white;
       }
 
       .navbar-unit {
@@ -197,7 +197,7 @@ h6 {
          font-size: 1.2em;
          padding-top: 1.2em;
          border-left: $nav-bar-line;
-         border-bottom: $nav-bar-line;
+         border-bottom: white;
          @include span-columns(4, block-collapse);
          @include media($medium) {
             font-size: 1.33em;
@@ -217,7 +217,7 @@ h6 {
       }
 
       .navbar-unit:hover {
-         background-color: $kolor-hover;
+         background-color: white;
       }
    }
 
@@ -363,6 +363,7 @@ h6 {
 
 .works-image {
    border: 0px;
+   display: block;
 }
 
 .works-image:hover {
@@ -370,8 +371,8 @@ h6 {
 }
 
 .works-title:hover {
-   color: $kolor-hover;
-   border-bottom: 1px solid $kolor-hover;
+   color: $kolor;
+   border-bottom: 1px solid $kolor;
 }
 
 .works-text:hover {
@@ -381,17 +382,17 @@ h6 {
 img {
    width: 100%;
    height: auto;
-   margin-top: 0.5em;
-   margin-bottom: 0.66em;
-   @include media($large) {
-      margin-bottom: 0.5em;
-   }
+   //margin-top: 0.5em;
+   //margin-bottom: 0.66em;
+   //@include media($large) {
+      //margin-bottom: 0.5em;
+   //}
    //padding-right: 2px;
 }
 
 // img:hover {
 //    padding-right: 0px;
-//    border-right: 2px solid $kolor-hover;
+//    border-right: 2px solid $kolor;
 // }
 
 

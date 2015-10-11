@@ -25,7 +25,7 @@ $full: new-breakpoint(min-width 1160px);
 
 // Declare variables
 $kolor: #a4a4a4;
-$nav-bar-line: 1px solid black; // One place to change style of all navabr divider lines
+$nav-bar-line: 1px solid #a4a4a4; // One place to change style of all navabr divider lines
 
 
 
@@ -43,11 +43,12 @@ main {
 
 section {
    background-color: white;
-   padding: 3em 1em 2em 1em;
-   margin-bottom: 2em;
-   // @include media($large) {
-   //    padding: 2em 1em 1em 1em;
-   // }
+   padding: 2.5em 1em 2.66em 1em;
+   margin-bottom: 1.33em; //45° line divider unit height
+   @include media($large) {
+      padding: 4em 1em 4.5em 1em;
+      margin-bottom: 2em; //45° line divider unit height
+   }
 }
 
 a {
@@ -65,10 +66,6 @@ a:hover {
 a:active {
    border: 0px;
 }
-
-// a:visited {
-//    color: #555555;
-// }
 
 p {
    font-weight: 400;
@@ -142,7 +139,6 @@ h6 {
 
 // Define classes
 .navbar-out {
-   //background-color: $kolor;
    width: 100%;
    margin-top: 0px;
    font-weight: 500;
@@ -229,23 +225,7 @@ h6 {
 
 
 
-// .divider-line {
-//    margin-top: 3em; // Includes margin-bottom from previous .divide
-//    margin-bottom: 3em;
-//    border-bottom: 3px dotted #dddddd;
-//    @include outer-container(100%); // Strech div throughout entire section width
-//    @include media($large) {
-//       margin-top: 6em; // Includes margin-bottom from previous .divide
-//       margin-bottom: 6em;
-//    }
-// }
-
-
-
-
 .index {
-   margin-top: 1em;
-   margin-bottom: 2em;
    @include outer-container;
 
    .index-one-third {
@@ -307,10 +287,8 @@ h6 {
       @include outer-container;
       .divide-third-unit {
          @include span-columns(12);
-         // @include omega(2n);
          @include media($large) {
             @include span-columns(4);
-            // @include omega(3n);
          }
       }
    }
@@ -382,18 +360,8 @@ h6 {
 img {
    width: 100%;
    height: auto;
-   //margin-top: 0.5em;
-   //margin-bottom: 0.66em;
-   //@include media($large) {
-      //margin-bottom: 0.5em;
-   //}
-   //padding-right: 2px;
 }
 
-// img:hover {
-//    padding-right: 0px;
-//    border-right: 2px solid $kolor;
-// }
 
 
 
@@ -431,11 +399,6 @@ img {
    margin-top: 0px;
    float: right;
 }
-
-// .image-with-border {
-//    border: 1px solid gray;
-//    border-bottom: 4px solid gray;
-// }
 
 .fontello-home-more {
    font-size: 1.8em;

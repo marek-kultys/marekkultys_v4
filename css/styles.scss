@@ -68,17 +68,46 @@ a:active {
 }
 
 p {
+   font-size: 1.1em;
+   line-height: 1.3em;
    font-weight: 400;
+   font-style: italic;
+   margin-top: 0.1em;
+   @include media($medium) {
+      font-size: 1.3em;
+      line-height: 1.4em;
+   }
 }
 
 ul {
-   margin-top: 0.33em;
+   font-size: 1em;
+   line-height: 1.4em;
+   font-weight: 400;
+   font-style: italic;
+   max-width: 88%;
+   margin-bottom: 2em;
+   @include media($medium) {
+      font-size: 1.2em;
+      line-height: 1.5em;
+   }
+   list-style: none;
+   margin-left: 0;
+   padding-left: 2em;
+   text-indent: -1.5em;
+}
+
+li:before {
+    content: "—";
+    font-style: normal;
+    display: block;
+    float: left;
+    width: 1.5em;
 }
 
 h1 {
    font-size: 2em;
    font-weight: 500;
-   margin: 0em;
+   margin: 0em4
 }
 
 h2 {

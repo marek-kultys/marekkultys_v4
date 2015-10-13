@@ -51,7 +51,7 @@ section {
       margin-bottom: 2em; //45° line divider unit height
    }
    @include media($large) {
-      padding: 4em 1em 4.33em 1em;
+      padding: 4em 1.5em 4.33em 1.5em;
       margin-bottom: 2.5em; //45° line divider unit height
    }
 }
@@ -304,14 +304,6 @@ h6 {
          @include shift(4);
       }
    }
-
-   // .index-contact {
-   //    text-align: right;
-   //    @include span-columns( 4 of 8);
-   //    @include media($large) {
-   //       @include span-columns(2 of 8);
-   //    }
-   // }
 }
 
 
@@ -321,23 +313,17 @@ h6 {
    margin-top: 2em;
    margin-bottom: 2em;
    @include outer-container;
-   @include media($medium) {
-   }
-   @include media($large) {
-      margin-top: 3em;
-      margin-bottom: 4em;
-   }
 
    .divide-one-third-left {
       @include span-columns(12);
-      @include media($large) {
+      @include media($medium) {
          @include span-columns(4);
       }
    }
 
    .divide-two-thirds-left {
       @include span-columns(12);
-      @include media($large) {
+      @include media($medium) {
          @include span-columns(8);
       }
    }
@@ -346,7 +332,7 @@ h6 {
       @include outer-container;
       .divide-half-unit {
          @include span-columns(12);
-         @include media($large) {
+         @include media($medium) {
             @include span-columns(6);
          }
       }
@@ -356,7 +342,7 @@ h6 {
       @include outer-container;
       .divide-third-unit {
          @include span-columns(12);
-         @include media($large) {
+         @include media($medium) {
             @include span-columns(4);
          }
       }
@@ -364,21 +350,21 @@ h6 {
 
    .divide-full-one {
       @include span-columns(12);
-      @include media($large) {
+      @include media($medium) {
          @include span-columns(12);
       }
    }
 
    .divide-hide-desktop {
       @include span-columns(12);
-      @include media($large) {
+      @include media($medium) {
          display: none;
       }
    }
 
    .divide-hide-mobile {
       display: none;
-      @include media($large) {
+      @include media($medium) {
          @include span-columns(8);
       }
    }
@@ -388,7 +374,7 @@ h6 {
       @include outer-container;
       .divide-categories-unit {
          @include span-columns(12);
-         @include media($large) {
+         @include media($medium) {
             @include span-columns(4);
          }
       }
@@ -400,7 +386,7 @@ h6 {
 
 .hide-mobile {
    display: none;
-   @include media($large) {
+   @include media($medium) {
       display: block;
    }
 }

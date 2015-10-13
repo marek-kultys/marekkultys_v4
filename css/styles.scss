@@ -472,6 +472,12 @@ img {
 .fontello-home-more {
    font-size: 1.8em;
    float: left;
+   @include media($medium) {
+      font-size: 1.6em;
+   }
+   @include media($large) {
+      font-size: 1.8em;
+   }
 }
 
 .passive-link:hover {

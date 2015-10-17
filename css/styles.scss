@@ -391,6 +391,13 @@ h6 {
    }
 }
 
+.hide-desktop {
+   display: block;
+   @include media($medium) {
+      display: none;
+   }
+}
+
 
 
 
@@ -485,6 +492,15 @@ img {
    	left: 0;
    	width: 100%;
    	height: 100%;
+   }
+}
+
+.paragraph-divider {
+   display: block;
+   border-bottom: $nav-bar-line;
+   margin: 3.5em 0em 3em 0em;
+   @include media($medium) {
+      margin: 3.5em 1em 3em 1em;
    }
 }
 

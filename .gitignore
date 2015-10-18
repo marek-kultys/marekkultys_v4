@@ -4,6 +4,7 @@
 _site
 *.psd
 *.ai
+*.svg
 img/2plus3d/_source
 img/bento-lab/_source
 img/data-explorers/_source

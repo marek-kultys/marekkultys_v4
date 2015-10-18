@@ -482,10 +482,7 @@ img {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
-   margin-bottom: 0.66em;
-   @include media($large) {
-      margin-bottom: 1.33em;
-   }
+   margin-bottom: 0.33em;
    iframe {
    	position: absolute;
    	top: 0;

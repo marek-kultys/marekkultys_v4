@@ -25,8 +25,9 @@ $full: new-breakpoint(min-width 1160px);
 
 
 // Declare variables
-$kolor: #a4a4a4;
-$nav-bar-line: 1px solid #a4a4a4; // One place to change style of all navabr divider lines
+$kolor: #a4a4a4; // All brand colours
+$delay: 0.33s; // All on-hover transitions delays
+$nav-bar-line: 1px solid #a4a4a4; // All navbar divider lines
 
 
 
@@ -66,6 +67,7 @@ a {
 a:hover {
    color: $kolor;
    border-bottom: 1px solid $kolor;
+   transition: $delay;
 }
 
 a:active {
@@ -383,7 +385,6 @@ h6 {
 
 
 
-
 .hide-mobile {
    display: none;
    @include media($medium) {
@@ -408,11 +409,14 @@ h6 {
 
 .works-image:hover {
    border: 0px;
+   opacity: 0.75;
+   transition: $delay;
 }
 
 .works-title:hover {
    color: $kolor;
    border-bottom: 1px solid $kolor;
+   transition: $delay;
 }
 
 .works-text:hover {
@@ -449,16 +453,6 @@ img {
    font-size: 1.1em;
    line-height: 1.1em;
 }
-
-// .fontello-contact-icon {
-//    font-size: 1.2em;
-//    background-image: url("/img/patterns/stripes-up-04.png");
-//    margin-right: 0.1em;
-//    position: relative;
-//    top: 0.1em;
-//    padding-top: 0.11em;
-//    padding-bottom: 0.11em;
-// }
 
 .creative-commons {
    font-weight: 700;

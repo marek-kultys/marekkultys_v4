@@ -45,7 +45,7 @@ main {
 
 section {
    background-color: white;
-   padding: 3em 1em 2.5em 1em;
+   padding: 2em 1em 1.8em 1em;
    margin-bottom: 1.33em; //45° line divider unit height
    @include media($medium) {
       padding: 3em 1.5em 3.33em 1.5em;
@@ -153,6 +153,7 @@ h3 {
 // Style for contacts
 ol {
    margin: 0px;
+   margin-bottom: 0.5em;
    font-size: 1em;
    line-height: 2em;
    font-weight: 500;
@@ -296,9 +297,11 @@ h6 {
 
 
 .index {
+   margin-bottom: 0em;
    @include outer-container;
 
    .index-one-third {
+      padding-top: 1em;
       @include span-columns(12);
       @include media($medium) {
          @include span-columns(4);
@@ -308,9 +311,9 @@ h6 {
 
    .index-two-thirds {
       @include span-columns(12);
-      margin-bottom: 1em;
+      padding-top: 0.5em;
       @include media($medium) {
-         margin-bottom: 0em;
+         padding-top: 0em;
          @include span-columns(8);
          @include shift(4);
       }
@@ -321,8 +324,8 @@ h6 {
 
 
 .divide {
-   margin-top: 2em;
-   margin-bottom: 2em;
+   margin-top: 1.2em;
+   margin-bottom: 0em;
    @include outer-container;
 
    .divide-one-third-left {

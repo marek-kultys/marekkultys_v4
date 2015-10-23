@@ -26,7 +26,7 @@ $full: new-breakpoint(min-width 1160px);
 
 // Declare variables
 $kolor: #a4a4a4; // All brand colours
-$delay: 0.33s; // All on-hover transitions delays
+$delay: 0.20s; // All on-hover transitions delays
 $nav-bar-line: 1px solid #a4a4a4; // All navbar divider lines
 
 
@@ -170,6 +170,15 @@ ol {
    }
 }
 
+
+// Style for categories in project pages
+h4 {
+   font-size: 1.1em;
+   font-weight: 500;
+   @include media($large) {
+      font-size: 1.2em;
+   }
+}
 
 
 // Style for years in project descriptions

@@ -25,9 +25,11 @@ $full: new-breakpoint(min-width 1160px);
 
 
 // Declare variables
-$kolor: #a4a4a4; // All brand colours
+$kolor: #b5b5b5; // All brand colours
 $delay: 0.20s; // All on-hover transitions delays
-$nav-bar-line: 1px solid #a4a4a4; // All navbar divider lines
+$nav-bar-line: 1px solid #b5b5b5; // All navbar divider lines
+$tlo: #ffffff; //All background colours
+$zamglenie: 0.66;
 
 
 
@@ -44,7 +46,7 @@ main {
 }
 
 section {
-   background-color: white;
+   background-color: $tlo;
    padding: 2em 1em 1.8em 1em;
    margin-bottom: 1.33em; //45° line divider unit height
    @include media($medium) {
@@ -60,8 +62,9 @@ section {
 a {
    font-weight: inherit;
    color: inherit;
-   border-bottom: 1px solid $kolor;
+   border-bottom: 1px solid #666666;
    text-decoration: none;
+   text-shadow: 0em 0.12em $tlo, 0.05em 0.1em $tlo, -0.05em 0.1em $tlo, 0.1em 0.1em $tlo, -0.1em 0.1em $tlo, 0.15em 0.1em $tlo;
 }
 
 a:hover {
@@ -288,9 +291,9 @@ h6 {
       }
    }
 
-   .navbar-typo {
-      color: black;
-   }
+   // .navbar-typo {
+   //    color: black;
+   // }
 }
 
 
@@ -421,7 +424,7 @@ h6 {
 
 .works-image:hover {
    border: 0px;
-   opacity: 0.75;
+   opacity: $zamglenie;
    transition: $delay;
 }
 

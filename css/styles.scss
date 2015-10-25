@@ -154,19 +154,7 @@ h3 {
 }
 
 
-// Style for categories in project pages
-h4 {
-   font-size: 1.1em;
-   font-weight: 500;
-   @include media($large) {
-      font-size: 1.2em;
-      line-height: 2.2em;
-      font-weight: 500;
-   }
-}
-
-
-// Style for years and contacts
+// Style for years, contacts and categories
 h5 {
    margin: 0px;
    font-size: 1em;
@@ -485,10 +473,7 @@ img {
 .paragraph-divider {
    display: block;
    border-bottom: $nav-bar-line;
-   margin: 3.5em 0em 3em 0em;
-   @include media($medium) {
-      margin: 3.5em 1em 3em 1em;
-   }
+   margin: 3.5em 0.5em 3em 0.5em;
 }
 
 

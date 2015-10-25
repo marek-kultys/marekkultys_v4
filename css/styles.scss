@@ -1,19 +1,12 @@
 ---
 ---
 
-
 // Import Bourbon and Neat
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-
-
-
 // Import font
 {% include fonts.css %}
-
-
-
 
 // Declare breakpoints
 $mobile: new-breakpoint(max-width 640px 2);
@@ -21,20 +14,22 @@ $medium: new-breakpoint(min-width 641px);
 $large: new-breakpoint(min-width 769px);
 $full: new-breakpoint(min-width 1160px);
 
-
-
-
 // Declare variables
 $kolor: #ff6600; // All brand colours
 $zwloka: 0.125s; // All on-hover transitions delays
 $nav-bar-line: 1px solid #a4a4a4; // All navbar divider lines
-$tlo: #ffffff; //All background colours
-$zamglenie: 0.66;
+$tlo: #ffffff; // All background colours
+$zamglenie: 0.66; // Dimming of hyperlink images
 
 
 
 
-// Customise Tags
+// Customise globals
+html {
+    overflow-y: scroll; // Fixing jumping scroll bar when page overflows
+	 overflow-x: ignore;
+}
+
 body {
    font-family: "Roboto", Helvetica, sans-serif;
    @include outer-container(100%);
@@ -176,10 +171,19 @@ h6 {
    }
 }
 
+img {
+   width: 100%;
+   height: auto;
+}
+
+@-ms-viewport {
+  width: device-width; // Fixing MS viewport
+}
 
 
 
-// Define classes
+
+// Navigation bar
 .navbar-out {
    width: 100%;
    margin-top: 0px;
@@ -269,6 +273,7 @@ h6 {
 
 
 
+// Home page
 .index {
    margin-bottom: 0em;
    @include outer-container;
@@ -296,6 +301,7 @@ h6 {
 
 
 
+// Main grid
 .divide {
    margin-top: 1.2em;
    margin-bottom: 0em;
@@ -358,6 +364,7 @@ h6 {
 
    .divide-categories {
       @include outer-container;
+      margin-bottom: 3em;
       .divide-categories-unit {
          @include span-columns(12);
          margin-bottom: 4em;
@@ -375,6 +382,7 @@ h6 {
 
 
 
+// Hiding
 .hide-mobile {
    display: none;
    @include media($medium) {
@@ -392,6 +400,7 @@ h6 {
 
 
 
+// Other styles
 .works-image {
    border: 0px;
    display: block;
@@ -429,15 +438,6 @@ h6 {
    opacity: $zamglenie;
    transition: $zwloka;
 }
-
-img {
-   width: 100%;
-   height: auto;
-}
-
-
-
-
 
 .copyright-typo {
    height: 100%;
@@ -496,18 +496,4 @@ img {
    display: block;
    border-bottom: $nav-bar-line;
    margin: 3.5em 0.5em 3em 0.5em;
-}
-
-
-
-
-// Fixing MS viewport
-@-ms-viewport{
-  width: device-width;
-}
-
-// Fixing jumping scroll bar when page overflows
-html {
-    overflow-y: scroll;
-	 overflow-x: ignore;
 }

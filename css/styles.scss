@@ -348,6 +348,7 @@ img {
       }
    }
 
+   // Move paragraph to other location when on different device
    .divide-hide-desktop {
       @include span-columns(12);
       @include media($medium) {
@@ -362,9 +363,10 @@ img {
       }
    }
 
+   // Grid for categories pages
    .divide-categories {
       @include outer-container;
-      margin-bottom: 3em;
+      margin-bottom: 4em;
       .divide-categories-unit {
          @include span-columns(12);
          margin-bottom: 4em;
@@ -376,13 +378,23 @@ img {
       .divide-categories-unit:last-child {
          margin-bottom: 0em;
       }
+
+      img {
+         margin-bottom: 1.25em;
+         @include media($large) {
+            margin-bottom: 1.5em;
+         }
+      }
+   }
+   .divide-categories:last-child {
+      margin-bottom: 0em;
    }
 }
 
 
 
 
-// Hiding
+// Selective hiding
 .hide-mobile {
    display: none;
    @include media($medium) {
@@ -420,13 +432,6 @@ img {
 
 .works-text:hover {
    color: black;
-}
-
-.categories-wrapper {
-   margin-bottom: 1.33em;
-   @include media($large) {
-      margin-bottom: 1.5em;
-   }
 }
 
 .categories-image {

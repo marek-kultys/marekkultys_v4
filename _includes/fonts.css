@@ -1,4 +1,4 @@
-/*@font-face {
+@font-face {
   font-family: 'Roboto';
   font-weight: 100;
   font-style: normal;
@@ -10,7 +10,7 @@
        url('/fonts/Roboto-100/Roboto-100.woff') format('woff'),
        url('/fonts/Roboto-100/Roboto-100.ttf') format('truetype'),
        url('/fonts/Roboto-100/Roboto-100.svg#Roboto') format('svg');
-}*/
+}
 
 @font-face {
   font-family: 'Roboto';

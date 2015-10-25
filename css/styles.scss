@@ -48,14 +48,14 @@ main {
 section {
    background-color: $tlo;
    padding: 2em 1em 1.8em 1em;
-   margin-bottom: 1.33em; //45° line divider unit height
+   margin-bottom: 1.33em; // patterned unit height
    @include media($medium) {
       padding: 3em 1.5em 3.33em 1.5em;
-      margin-bottom: 2em; //45° line divider unit height
+      margin-bottom: 2em; // patterned unit height
    }
    @include media($large) {
       padding: 4em 1.5em 4.33em 1.5em;
-      margin-bottom: 2.5em; //45° line divider unit height
+      margin-bottom: 2.5em; // patterned unit height
    }
 }
 
@@ -461,17 +461,6 @@ img {
    text-align: right;
    margin-top: 0px;
    float: right;
-}
-
-.fontello-home-more {
-   font-size: 1.8em;
-   float: left;
-   @include media($medium) {
-      font-size: 1.6em;
-   }
-   @include media($large) {
-      font-size: 1.8em;
-   }
 }
 
 .passive-link:hover {

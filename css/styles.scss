@@ -17,7 +17,7 @@ $full: new-breakpoint(min-width 1160px);
 // Declare variables
 $kolor: #ff6600; // All brand colours
 $zwloka: 0.125s; // All on-hover transitions delays
-$nav-bar-line: 1px solid #a4a4a4; // All navbar divider lines
+$nav-bar-line: 1px solid #858585; // All navbar divider lines
 $tlo: #ffffff; // All background colours
 $zamglenie: 0.66; // Dimming of hyperlink images
 
@@ -57,9 +57,10 @@ section {
 a {
    font-weight: inherit;
    color: inherit;
-   border-bottom: 1px solid #666666;
+   border-bottom: $nav-bar-line;
    text-decoration: none;
    text-shadow: -0.1em 0.05em $tlo, -0.05em 0.05em $tlo, 0em 0.05em $tlo, 0.05em 0.05em $tlo, 0.1em 0.05em $tlo, 0.15em 0.05em $tlo, -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
+   // Text shadow adds white breaks between letter descenders and text underline
 }
 
 a:hover {
@@ -119,9 +120,6 @@ h1 {
    font-size: 2em;
    font-weight: 500;
    margin: 0em;
-   // @include media($medium) {
-   //    font-size: 1.66em;
-   // }
 }
 
 // Style for project titles in home page
@@ -221,13 +219,11 @@ img {
          }
          @include media($large) {
             height: 3em;
+            text-align: left;
             font-size: 1.5em;
             font-weight: 500;
-            text-align: left;
             padding-top: 1em;
             padding-left: 1em;
-            border-bottom: 0px;
-            border-left: $nav-bar-line;
          }
       }
 
@@ -255,7 +251,6 @@ img {
             font-weight: 500;
             padding-top: 1em;
             padding-left: 1em;
-            border-bottom: 0px;
          }
       }
 
@@ -265,7 +260,6 @@ img {
    }
 
    .navbar-typo {
-      //color: black;
       text-shadow: none;
    }
 }
@@ -273,12 +267,12 @@ img {
 
 
 
-// Home page
-.index {
+// Thr Grid
+.divide {
    margin-bottom: 0em;
    @include outer-container;
 
-   .index-one-third {
+   .divide-one-third-right {
       padding-top: 1em;
       @include span-columns(12);
       @include media($medium) {
@@ -287,7 +281,7 @@ img {
       }
    }
 
-   .index-two-thirds {
+   .divide-two-thirds-right {
       @include span-columns(12);
       padding-top: 0.5em;
       @include media($medium) {
@@ -296,18 +290,9 @@ img {
          @include shift(4);
       }
    }
-}
-
-
-
-
-// Main grid
-.divide {
-   margin-top: 1.2em;
-   margin-bottom: 0em;
-   @include outer-container;
 
    .divide-one-third-left {
+      margin-top: 1.2em;
       @include span-columns(12);
       @include media($medium) {
          @include span-columns(4);
@@ -315,6 +300,7 @@ img {
    }
 
    .divide-two-thirds-left {
+      margin-top: 1.2em;
       @include span-columns(12);
       @include media($medium) {
          @include span-columns(8);
@@ -322,6 +308,7 @@ img {
    }
 
    .divide-half {
+      margin-top: 1.2em;
       @include outer-container;
       .divide-half-unit {
          @include span-columns(12);
@@ -332,6 +319,7 @@ img {
    }
 
    .divide-third {
+      margin-top: 1.2em;
       @include outer-container;
       .divide-third-unit {
          @include span-columns(12);
@@ -342,6 +330,7 @@ img {
    }
 
    .divide-full-one {
+      margin-top: 1.2em;
       @include span-columns(12);
       @include media($medium) {
          @include span-columns(12);
@@ -350,6 +339,7 @@ img {
 
    // Move paragraph to other location when on different device
    .divide-hide-desktop {
+      margin-top: 1.2em;
       @include span-columns(12);
       @include media($medium) {
          display: none;
@@ -357,6 +347,7 @@ img {
    }
 
    .divide-hide-mobile {
+      margin-top: 1.2em;
       display: none;
       @include media($medium) {
          @include span-columns(8);
@@ -365,6 +356,7 @@ img {
 
    // Grid for categories pages
    .divide-categories {
+      margin-top: 1.2em;
       @include outer-container;
       margin-bottom: 4em;
       .divide-categories-unit {

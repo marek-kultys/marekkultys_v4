@@ -28,13 +28,18 @@ $zamglenie: 0.66; // Dimming of hyperlink images
 html {
     overflow-y: scroll; // Fixing jumping scroll bar when page overflows
 	 overflow-x: ignore;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
    font-family: "Roboto", Helvetica, sans-serif;
    @include outer-container(100%);
-   margin: 0px auto 0px auto;
    background-image: url("/img/patterns/stripes-up-04.png");
+   margin: 0 0 4em;
+   @include media ($large) {
+      margin: 0 0 5em;
+   }
 }
 
 main {
@@ -52,6 +57,24 @@ section {
       padding: 4em 1.5em 4.33em 1.5em;
       margin-bottom: 2.5em; // patterned unit height
    }
+}
+section:last-of-type {
+   margin-bottom: 2.33em !important;
+   @include media($medium) {
+      margin-bottom: 3em !important;
+   }
+   @include media($large) {
+      margin-bottom: 2.5em !important;
+   }
+}
+
+footer {
+   background-color: $tlo;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 5em;
+   width: 100%;
 }
 
 a {
@@ -228,7 +251,7 @@ img {
       }
 
       .navbar-all:hover {
-         background-color: white;
+         background-color: $tlo;
       }
 
       .navbar-unit {
@@ -255,7 +278,7 @@ img {
       }
 
       .navbar-unit:hover {
-         background-color: white;
+         background-color: $tlo;
       }
    }
 
@@ -437,19 +460,19 @@ img {
 }
 
 .copyright-typo {
-   height: 100%;
-   padding: 2em 1em 2em 1em;
-   background-color: white;
+   background-color: $tlo;
    text-align: center;
    font-weight: 300;
    font-size: 0.8em;
    line-height: 1.6em;
+   padding: 1.8em;
    @include media($medium) {
       font-size: 1em;
+      padding: 1.66em;
    }
    @include media($large) {
       font-size: 1.25em;
-      padding-bottom: 2.5em;
+      padding: 1.5em;
    }
 }
 
@@ -493,4 +516,11 @@ img {
    display: block;
    border-bottom: $nav-bar-line;
    margin: 3.5em 0.5em 3em 0.5em;
+}
+
+.back-to-top {
+   margin-top: 0.66em;
+   @include media ($medium) {
+      margin-top: 1.5em;
+   }
 }

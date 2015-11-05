@@ -21,6 +21,30 @@
       ]
     },
     {
+      "uid": "2b8e9b027181aafd210bf29c5486d4a0",
+      "css": "up-circled",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "css": "twitter",
+      "code": 59401,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "43c4064ec1260d0e55c37e0467c75cbb",
+      "css": "up-1",
+      "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "dbc97808cba7d0c135c7054e7a85fb86",
+      "css": "up-thin",
+      "code": 59399,
+      "src": "entypo"
+    },
+    {
       "uid": "4a413ef43c364dafa42766e74c31bbca",
       "css": "cc",
       "code": 59392,
@@ -37,6 +61,18 @@
       "css": "cc-sa",
       "code": 59394,
       "src": "entypo"
+    },
+    {
+      "uid": "giaskl13npzvuuz2ovy3vw8s0bewik08",
+      "css": "up-2",
+      "code": 59402,
+      "src": "modernpics"
+    },
+    {
+      "uid": "a7e3ce91275bb77c0f4ec44a548b325c",
+      "css": "up-circle",
+      "code": 59403,
+      "src": "websymbols"
     }
   ]
 }

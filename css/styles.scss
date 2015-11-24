@@ -520,8 +520,17 @@ img {
 }
 
 .back-to-top {
+   border-bottom: 1px solid black;
    margin-top: 0.66em;
    @include media ($medium) {
       margin-top: 1.5em;
    }
+}
+
+.rocket {
+   font-size: 2em;
+   position: relative;
+   top: 0.1em;
+   right: 0.2em;
+   border: 0px;
 }

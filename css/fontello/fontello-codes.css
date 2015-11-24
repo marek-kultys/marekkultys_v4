@@ -2,10 +2,6 @@
 .icon-cc:before { content: '\e800'; } /* '' */
 .icon-cc-by:before { content: '\e801'; } /* '' */
 .icon-cc-sa:before { content: '\e802'; } /* '' */
-.icon-_doc:before { content: '\e803'; } /* '' */
-.icon-book:before { content: '\e804'; } /* '' */
-.icon-doc-text:before { content: '\e805'; } /* '' */
 .icon-up-1:before { content: '\e806'; } /* '' */
 .icon-book-open:before { content: '\e807'; } /* '' */
-.icon-doc-text-inv:before { content: '\e808'; } /* '' */
-.icon-up-circle:before { content: '\e80b'; } /* '' */
+.icon-rocket:before { content: '\e809'; } /* '' */

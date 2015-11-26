@@ -169,6 +169,9 @@ h3 {
       font-size: 1.5em;
    }
 }
+h3:hover {
+   border-color: inherit;
+}
 
 
 // Style for years, contacts and categories
@@ -331,6 +334,21 @@ img {
       }
    }
 
+   .divide-one-middle {
+      @include span-columns(12);
+      padding-top: 0.5em;
+      @include media($medium) {
+         padding-top: 0em;
+         @include span-columns(3.6);
+         @include shift(4);
+      }
+      @include media($full) {
+         padding-top: 0em;
+         @include span-columns(2.4);
+         @include shift(4);
+      }
+   }
+
    .divide-half {
       margin-top: 1.2em;
       @include outer-container;
@@ -477,17 +495,6 @@ img {
    }
 }
 
-.fontello-close-icon {
-   font-size: 1.1em;
-   line-height: 1.1em;
-}
-
-.creative-commons {
-   font-weight: 700;
-   font-size: 1em;
-   line-height: 2.4em;
-}
-
 .image-credit {
    text-align: right;
    margin-top: 0px;
@@ -520,17 +527,29 @@ img {
 }
 
 .back-to-top {
-   border-bottom: 1px solid black;
+   border-bottom: 1px solid;
    margin-top: 0.66em;
    @include media ($medium) {
       margin-top: 1.5em;
    }
 }
 
+// Fontello styles
 .rocket {
    font-size: 2em;
    position: relative;
    top: 0.1em;
    right: 0.2em;
    border: 0px;
+}
+
+.fontello-close-icon {
+   font-size: 1.1em;
+   line-height: 1.1em;
+}
+
+.creative-commons {
+   font-weight: 700;
+   font-size: 1em;
+   line-height: 2.4em;
 }

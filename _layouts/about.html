@@ -15,18 +15,17 @@
 
 	<body>
 
-		<main>
+		<main id="page">
 
 			<nav>
 				{% include navbar.html %}
 			</nav>
 
+			{{ content }}
+
 			<section>
-				{% include about.html %}
 				{% include contact.html %}
 			</section>
-
-			{{ content }}
 
 			<section>
 				{% include back-top.html %}

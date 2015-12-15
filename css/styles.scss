@@ -16,8 +16,9 @@ $full: new-breakpoint(min-width 1160px);
 
 // Declare variables
 $kolor: #ff6600; // All brand colours
+$szary: #858585; // Grey colour for lines and visited links
 $zwloka: 0.125s; // All on-hover transitions delays
-$nav-bar-line: 1px solid #858585; // All navbar divider lines
+$nav-bar-line: 1px solid $szary; // All navbar divider lines
 $tlo: #ffffff; // All background colours
 $zamglenie: 0.66; // Dimming of hyperlink images
 
@@ -85,13 +86,11 @@ a {
    text-shadow: -0.1em 0.05em $tlo, -0.05em 0.05em $tlo, 0em 0.05em $tlo, 0.05em 0.05em $tlo, 0.1em 0.05em $tlo, 0.15em 0.05em $tlo, -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
    // Text shadow adds white breaks between letter descenders and text underline
 }
-
 a:hover {
    color: $kolor;
    border-bottom: 1px solid $kolor;
    transition: $zwloka;
 }
-
 a:active {
    border: 0px;
 }
@@ -173,8 +172,21 @@ h3:hover {
    border-color: inherit;
 }
 
+// Style for contacts
+h4 {
+   margin: 0px;
+   font-size: 1em;
+   line-height: 4em;
+   font-weight: 500;
+   @include media($large) {
+      font-size: 1.3em;
+   }
+}
+h4:last-of-type {
+   line-height: 0.5em;
+}
 
-// Style for years, contacts and categories
+// Style for years
 h5 {
    margin: 0px;
    font-size: 1em;
@@ -379,6 +391,10 @@ img {
       }
    }
 
+   .divide-full-centre {
+      text-align: center;
+   }
+
    // Move paragraph to other location when on different device
    .divide-hide-desktop {
       margin-top: 1.2em;
@@ -478,6 +494,14 @@ img {
    transition: $zwloka;
 }
 
+.back-to-top {
+   border-bottom: 1px solid;
+   margin-top: 0.66em;
+   @include media ($medium) {
+      margin-top: 1.5em;
+   }
+}
+
 .copyright-typo {
    background-color: $tlo;
    text-align: center;
@@ -526,13 +550,8 @@ img {
    margin: 3.5em 0.5em 3em 0.5em;
 }
 
-.back-to-top {
-   border-bottom: 1px solid;
-   margin-top: 0.66em;
-   @include media ($medium) {
-      margin-top: 1.5em;
-   }
-}
+
+
 
 // Fontello styles
 .rocket {

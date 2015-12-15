@@ -98,7 +98,7 @@ a:active {
 // Style for body text in project pages
 p {
    font-size: 1.1em;
-   line-height: 1.3em;
+   line-height: 1.4em;
    font-weight: 400;
    font-style: italic;
    margin-top: 0.1em;
@@ -391,10 +391,6 @@ img {
       }
    }
 
-   .divide-full-centre {
-      text-align: center;
-   }
-
    // Move paragraph to other location when on different device
    .divide-hide-desktop {
       margin-top: 1.2em;
@@ -409,6 +405,22 @@ img {
       display: none;
       @include media($medium) {
          @include span-columns(8);
+      }
+   }
+
+   .divide-hide-mobile-full-one {
+      margin-top: 1.2em;
+      display: none;
+      @include media($medium) {
+         @include span-columns(12);
+      }
+   }
+
+   .divide-hide-mobile-full-one {
+      margin-top: 1.2em;
+      display: none;
+      @include media($medium) {
+         @include span-columns(12);
       }
    }
 

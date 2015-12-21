@@ -102,10 +102,6 @@ p {
    font-weight: 400;
    font-style: italic;
    margin-top: 0.1em;
-   @include media($medium) {
-      font-size: 1.1em;
-      line-height: 1.4em;
-   }
    @include media($large) {
       font-size: 1.3em;
       line-height: 1.4em;
@@ -175,15 +171,11 @@ h3:hover {
 // Style for contacts
 h4 {
    margin: 0px;
-   font-size: 1em;
-   line-height: 4em;
+   font-size: 1.1em;
    font-weight: 500;
    @include media($large) {
-      font-size: 1.3em;
+      font-size: 1.4em;
    }
-}
-h4:last-of-type {
-   line-height: 0.5em;
 }
 
 // Style for years
@@ -408,11 +400,11 @@ img {
       }
    }
 
-   .divide-hide-mobile-full-one {
+   .divide-hide-mobile-one-third {
       margin-top: 1.2em;
       display: none;
       @include media($medium) {
-         @include span-columns(12);
+         @include span-columns(4);
       }
    }
 
@@ -496,6 +488,10 @@ img {
    color: black;
 }
 
+.contacts {
+   margin-top: 2em;
+}
+
 .categories-image {
    border: 0px;
 }
@@ -566,17 +562,32 @@ img {
 
 
 // Fontello styles
-.rocket {
+.fontello-rocket-icon {
    font-size: 2em;
    position: relative;
    top: 0.1em;
    right: 0.2em;
    border: 0px;
+   margin-left: 0.2em
 }
 
-.fontello-close-icon {
+.fontello-cc-icon {
    font-size: 1.1em;
    line-height: 1.1em;
+
+}
+
+.fontello-hi-icon {
+   font-size: 1.9em;
+   position: relative;
+   top: -0.1em;
+   margin-left: 0.1em;
+   margin-right: 0.1em;
+   vertical-align: text-top;
+   border: 0px;
+}
+.fontello-hi-icon:hover {
+   border: 0px;
 }
 
 .creative-commons {

@@ -1,6 +1,5 @@
 ---
 ---
-
 // Import Bourbon and Neat
 @import "bourbon/bourbon";
 @import "neat/neat";
@@ -102,10 +101,6 @@ p {
    font-weight: 400;
    font-style: italic;
    margin-top: 0.1em;
-   @include media($medium) {
-      font-size: 1.1em;
-      line-height: 1.4em;
-   }
    @include media($large) {
       font-size: 1.3em;
       line-height: 1.4em;
@@ -129,12 +124,29 @@ ul {
    padding-left: 2em;
    text-indent: -1.5em;
    li:before {
-       content: "—";
-       font-style: normal;
-       display: block;
-       float: left;
-       width: 1.5em;
+      content: "—";
+      font-style: normal;
+      display: block;
+      float: left;
+      width: 1.5em;
    }
+}
+
+// Style for numbered lists
+ol {
+   font-size: 1em;
+   line-height: 1.4em;
+   font-weight: 400;
+   font-style: italic;
+   max-width: 90%;
+   margin-bottom: 2em;
+   @include media($medium) {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      max-width: 100%;
+   }
+   margin-left: 0;
+   padding-left: 2em;
 }
 
 // Style for main page title
@@ -176,14 +188,13 @@ h3:hover {
 h4 {
    margin: 0px;
    font-size: 1em;
-   line-height: 4em;
    font-weight: 500;
-   @include media($large) {
-      font-size: 1.3em;
+   @include media($medium) {
+      line-height: 1.65em;
    }
-}
-h4:last-of-type {
-   line-height: 0.5em;
+   @include media($large) {
+      font-size: 1.5em;
+   }
 }
 
 // Style for years
@@ -211,6 +222,14 @@ h6 {
 img {
    width: 100%;
    height: auto;
+}
+
+// Style for subscripts
+sub {
+    vertical-align: baseline;
+    position: relative;
+    top: 0.15em;
+    font-size: smaller;
 }
 
 @-ms-viewport {
@@ -408,11 +427,11 @@ img {
       }
    }
 
-   .divide-hide-mobile-full-one {
+   .divide-hide-mobile-one-third {
       margin-top: 1.2em;
       display: none;
       @include media($medium) {
-         @include span-columns(12);
+         @include span-columns(4);
       }
    }
 
@@ -496,6 +515,15 @@ img {
    color: black;
 }
 
+.contacts {
+   margin-bottom: 3em;
+   margin-top: 1.33em;
+   @include media($medium) {
+      margin-bottom: 4em;
+      margin-top: 2em;
+   }
+}
+
 .categories-image {
    border: 0px;
 }
@@ -506,10 +534,9 @@ img {
    transition: $zwloka;
 }
 
-.back-to-top-typo {
+.back-to-top {
    border-bottom: 1px solid;
    margin-top: 0.66em;
-   margin-right: 2em;
    @include media ($medium) {
       margin-top: 1.5em;
    }
@@ -534,8 +561,17 @@ img {
 
 .image-credit {
    text-align: right;
-   margin-top: 0px;
+   margin-top: 0.33em;
    float: right;
+}
+
+.separated-images {
+   img {
+      margin-bottom: 2.5em;
+   }
+   img:last-of-type {
+      margin-bottom: 0em;
+   }
 }
 
 .passive-link:hover {
@@ -567,16 +603,33 @@ img {
 
 
 // Fontello styles
-.rocket {
+.fontello-rocket-icon {
    font-size: 2em;
    position: relative;
    top: 0.1em;
+   right: 0.2em;
    border: 0px;
+   margin-left: 0.2em
 }
 
-.fontello-commons-icon {
+.fontello-cc-icon {
    font-size: 1.1em;
    line-height: 1.1em;
+
+}
+
+.fontello-hi-icon {
+   font-size: 1.8em;
+   position: relative;
+   margin-left: 0em;
+   margin-right: 0em;
+   vertical-align: text-top;
+   border: 0px;
+   top: -0.1em;
+   line-height: 90%;
+}
+.fontello-hi-icon:hover {
+   border: 0px;
 }
 
 .creative-commons {

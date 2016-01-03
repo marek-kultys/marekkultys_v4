@@ -1,45 +1,28 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 	<head>
-
     	<title>
-      	{{ page.title }}
+      	{{ page.title }} | marekkultys.com
       </title>
-
-
     	{% include head.html %}
-
 	</head>
 
 	<body>
-
 		<main id="page">
-
 			<nav>
 				{% include navbar.html %}
 			</nav>
-
 			<section>
-				{% include about.html %}
+				{% include abouts.html %}
 			</section>
-
 			{{ content }}
-
 			<section id="navigation">
 				{% include back-top.html %}
-				<!-- {% include categories.html %} -->
 			</section>
-
 			<footer>
 				{% include copyright.html %}
 			</footer>
-
 		</main>
-
 		{% include scripts.html %}
-
 	</body>
-
 </html>

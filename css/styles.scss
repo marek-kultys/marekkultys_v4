@@ -370,14 +370,16 @@ sub {
       @include span-columns(12);
       padding-top: 0.5em;
       @include media($medium) {
+         text-align: center;
          padding-top: 0em;
          @include span-columns(3.6);
-         @include shift(4);
+         @include shift(4.2);
       }
       @include media($full) {
+         text-align: center;
          padding-top: 0em;
          @include span-columns(2.4);
-         @include shift(4);
+         @include shift(4.8);
       }
    }
 

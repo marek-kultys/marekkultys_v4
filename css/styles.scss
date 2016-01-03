@@ -506,9 +506,10 @@ img {
    transition: $zwloka;
 }
 
-.back-to-top {
+.back-to-top-typo {
    border-bottom: 1px solid;
    margin-top: 0.66em;
+   margin-right: 2em;
    @include media ($medium) {
       margin-top: 1.5em;
    }
@@ -570,11 +571,10 @@ img {
    font-size: 2em;
    position: relative;
    top: 0.1em;
-   right: 0.2em;
    border: 0px;
 }
 
-.fontello-close-icon {
+.fontello-commons-icon {
    font-size: 1.1em;
    line-height: 1.1em;
 }

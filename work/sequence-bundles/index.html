@@ -1,17 +1,126 @@
 ---
 layout: project
 title: Sequence Bundles
+label: bundles
 ---
+<section id="method">
+   <div class="divide">
+      <div class="divide-hide-mobile-full-one">
+         <img
+            data-sizes="auto" src="/img/sequence-bundles/sequence-bundles-641.jpg"
+            data-srcset="/img/sequence-bundles/sequence-bundles-1920.jpg 1920w,
+            /img/sequence-bundles/sequence-bundles-1080.jpg 1080w,
+            /img/sequence-bundles/sequence-bundles-192.jpg 192w"
+            class="lazyload">
+      </div>
+      <div class="divide-hide-desktop">
+         <img
+            data-sizes="auto" src="/img/sequence-bundles/sequence-bundles-fragment-641.jpg"
+            data-srcset="/img/sequence-bundles/sequence-bundles-fragment-1920.jpg 1920w,
+            /img/sequence-bundles/sequence-bundles-fragment-1080.jpg 1080w,
+            /img/sequence-bundles/sequence-bundles-fragment-192.jpg 192w"
+            class="lazyload">
+      </div>
+      <div class="divide-two-thirds-left">
+         <p>
+            <a href="http://science-practice.com/projects/sequence-bundles/">Sequence Bundles</a> are designed to help bioinformaticians discover and explore sequence motifs in protein and DNA <a href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">Multiple Sequence Alignments</a> (MSAs).
+         </p>
+         <p>
+            The Sequence Bundles <a href="http://www.biomedcentral.com/1753-6561/8/S2/S8">method</a> is a cousin of <a href="https://eagereyes.org/techniques/parallel-coordinates">parallel coordinates</a>. The <nobr>X-axis</nobr> shows all sequence positions (here 36). The <nobr>Y-axis</nobr> lists all possible residues in the sequence (here 20 amino acids + gap). Each sequence is represented with a line. Lines are continuous and <nobr>semi-transparent</nobr>, so it is easy to see as they converge in regions of consensus, and as they diverge in areas of variability.
+         </p>
+      </div>
+   </div>
+</section>
 
-SEQUENCE BUNDLES
+<section id="web-app">
+   <div class="divide">
+      <div class="divide-one-third-left">
+         <p>
+            Sequence Bundles have been implemented in two software tools.
+         </p>
+      <p>
+         At Science Practice we developed an online <a href="http://www.ebi.ac.uk/goldman-srv/sequencebundles/">visualisation <nobr>web-app</nobr></a>. It provides a quick and easy way to visualise users' own protein data. Images generated with the <nobr>web-app</nobr> can be used in publications too.
+         </p>
+      </div>
+      <a href="http://www.ebi.ac.uk/goldman-srv/sequencebundles/" class="works-image">
+         <div class="divide-two-thirds-left">
+            <img
+               data-sizes="auto" src="/img/sequence-bundles/web-app-641.jpg"
+               data-srcset="/img/sequence-bundles/web-app-1920.jpg 1920w,
+               /img/sequence-bundles/web-app-1080.jpg 1080w,
+               /img/sequence-bundles/web-app-192.jpg 192w"
+               class="lazyload" {% include image-border.css %}>
+         </div>
+      </a>
+   </div>
+</section>
 
-<p>Contact</p>
-<a href="mailto:mk@marekkultys.com">Email</a>
-<a href="https://twitter.com/marekkultys">Twitter</a>
-<a href="https://github.com/marek-kultys">Github</a>
-<a href="https://uk.linkedin.com/pub/marek-kultys/19/609/48a">LinkedIn</a>
+<section id="desktop-tool">
+   <div class="divide">
+      <div class="divide-two-thirds-left">
+         <p>
+            We also collaborated with the <a href="http://www.ebi.ac.uk/research/goldman">Goldman group</a> at EMBL-EBI to implement Sequence Bundles in <a href="http://www.ebi.ac.uk/research/goldman/software/alvis">Alvis</a> — an <nobr>open-source</nobr> desktop platform for <nobr>non-aggregative</nobr> visualisation and explorative analysis of MSAs.
+         </p>
+      </div>
+      <div class="divide-full-one">
+            <div class="video-wrapper" {% include image-border.css %}>
+               <iframe src="https://player.vimeo.com/video/146710536" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+      </div>
+   </div>
+</section>
 
-{% include categories.html %}
+<section id="process">
+   <div class="divide">
+      <div class="divide-one-third-left">
+         <p>
+            We worked on Sequence Bundles for almost 2.5 years. The project started with some quick sketches, interviews with experts, and a lot of research into visualisation in bioinformatics. We went through several rounds of design iteration: from concept drawings, to design <nobr>mock-ups,</nobr> to <nobr>proof-of-concept</nobr> prototypes. The project concluded in building actual bioinformatics coftware tools.
+         </p>
+         <p>
+            I outlined our design journey in a post on <a href="http://science-practice.com/blog/2015/08/25/sequence-bundles-web/">Science Practice blog</a>.
+         </p>
+      </div>
+      <div class="divide-two-thirds-left">
+         <img src="http://science-practice.com/assets/sequence-bundles-webtool-01.jpg">
+         <img src="http://science-practice.com/assets/sequence-bundles-webtool-06.jpg">
+      </div>
+   </div>
+</section>
 
-<p>Home</p>
-<a href="/">Home</a>
+<section id="dissemination">
+   <div class="divide">
+      <div class="divide-half">
+         <div class="divide-half-unit">
+            <p>
+               Sequence Bundles were published in {% include pubs/bmcproceedings.html %}.
+            </p>
+            <p>I discussed Sequence Bundles at:
+               <ul>
+                  <li>{% include events/2015-idkrakow.html %},</li>
+                  <li>{% include events/2015-bioviscam2.html %},</li>
+                  <li>{% include events/2015-londonbioinf.html %},</li>
+                  <li>{% include events/2014-tivc.html %},</li>
+                  <li>{% include events/2014-ida.html %},</li>
+                  <li>{% include events/2013-biovis.html %}.</li>
+               </ul>
+            </p>
+            <p>
+               Sequence Bundles were also shown at the {% include events/2015-nyhallofsci.html %}.
+            </p>
+         </div>
+         <div class="divide-half-unit">
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Radical alternative visualisation of multiple sequence alignments from <a href="https://twitter.com/sciencepractice">@sciencepractice</a>: <a href="http://t.co/YJD6t4y1W9">http://t.co/YJD6t4y1W9</a> Web app at EBI is way cool!</p>&mdash; William Spooner (@wspoonr) <a href="https://twitter.com/wspoonr/status/639479433892638720">September 3, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">The Art of Networks II opens <a href="https://twitter.com/CompleNet">@CompleNet</a> on view <a href="https://twitter.com/nysci">@nysci</a> 3/26-5/31 <a href="http://t.co/I0SyaKl1Dv">http://t.co/I0SyaKl1Dv</a> Amazing work by <a href="https://twitter.com/bmcard">@bmcard</a> <a href="https://twitter.com/msb5014">@msb5014</a> <a href="https://twitter.com/marekkultys">@marekkultys</a></p>&mdash; isabel meirelles (@IsabelMeirelles) <a href="https://twitter.com/IsabelMeirelles/status/581081140116746240">March 26, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Revised version of Mark Barratt’s report from InfodesignUK 2014 <a href="https://twitter.com/hashtag/IDC2014?src=hash">#IDC2014</a> feat. Marek Kultys, Santiago Ortiz,... <a href="http://t.co/52c395nhIE">http://t.co/52c395nhIE</a></p>&mdash; Eye magazine (@eyemagazine) <a href="https://twitter.com/eyemagazine/status/460727629092761600">April 28, 2014</a></blockquote>
+
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/marekkultys">@marekkultys</a> on how to make 10,000s+ protein/DNA sequences beautifully comprehensible for intuitive science <a href="https://twitter.com/hashtag/idc2014?src=hash">#idc2014</a> <a href="http://t.co/X4cS33DlMt">pic.twitter.com/X4cS33DlMt</a></p>&mdash; Lydia Nicholas (@LydNicholas) <a href="https://twitter.com/LydNicholas/status/453092727308435456">April 7, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+      </div>
+   </div>
+</section>

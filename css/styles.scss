@@ -1,32 +1,644 @@
 ---
 ---
-
-
+// Import Bourbon and Neat
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-
-$mobile: new-breakpoint(max-width 600px 6);
-
-
-@-ms-viewport{
-  width: device-width;
-}
-
-
+// Import font
 {% include fonts.css %}
 
+// Declare breakpoints
+$mobile: new-breakpoint(max-width 640px 2);
+$medium: new-breakpoint(min-width 641px);
+$large: new-breakpoint(min-width 769px);
+$full: new-breakpoint(min-width 1160px);
+
+// Declare variables
+$kolor: #ff6600; // All brand colours
+$szary: #858585; // Grey colour for lines and visited links
+$zwloka: 0.125s; // All on-hover transitions delays
+$nav-bar-line: 1px solid $szary; // All navbar divider lines
+$tlo: #ffffff; // All background colours
+$zamglenie: 0.66; // Dimming of hyperlink images
+
+
+
+
+// Customise globals
+html {
+    overflow-y: scroll; // Fixing jumping scroll bar when page overflows
+	 overflow-x: ignore;
+    position: relative;
+    min-height: 100%;
+}
 
 body {
-  font-family: "Lato", Helvetica, sans-serif;
+   font-family: "Roboto", Helvetica, sans-serif;
+   @include outer-container(100%);
+   background-image: url("/img/patterns/stripes-up-04.png");
+   margin: 0 0 4em;
+   @include media ($large) {
+      margin: 0 0 5em;
+   }
+}
+
+main {
+}
+
+section {
+   background-color: $tlo;
+   padding: 2em 1em 1.8em 1em;
+   margin-bottom: 1.33em; // patterned unit height
+   @include media($medium) {
+      padding: 3em 1.5em 3.33em 1.5em;
+      margin-bottom: 2em; // patterned unit height
+   }
+   @include media($large) {
+      padding: 4em 1.5em 4.33em 1.5em;
+      margin-bottom: 2.5em; // patterned unit height
+   }
+}
+section:last-of-type {
+   margin-bottom: 2.33em !important;
+   @include media($medium) {
+      margin-bottom: 3em !important;
+   }
+   @include media($large) {
+      margin-bottom: 2.5em !important;
+   }
+}
+
+footer {
+   background-color: $tlo;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 5em;
+   width: 100%;
 }
 
 a {
-  font-weight: 300;
-  font-style: italic;
+   font-weight: inherit;
+   color: inherit;
+   border-bottom: $nav-bar-line;
+   text-decoration: none;
+   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
+   // Text shadow breaks bottom border in text
+}
+a:hover {
+   color: $kolor;
+   border-bottom: 1px solid $kolor;
+   transition: $zwloka;
+}
+a:active {
+   border: 0px;
 }
 
+// Style for body text in project pages
 p {
-  font-weight: 400;
-  font-style: normal;
+   font-size: 1.1em;
+   line-height: 1.4em;
+   font-weight: 400;
+   font-style: italic;
+   margin-top: 0.1em;
+   @include media($large) {
+      font-size: 1.3em;
+      line-height: 1.4em;
+   }
+}
+
+// Style for bulleted lists
+ul {
+   font-size: 1em;
+   line-height: 1.4em;
+   font-weight: 400;
+   font-style: italic;
+   max-width: 88%;
+   margin-bottom: 2em;
+   @include media($large) {
+      font-size: 1.2em;
+      line-height: 1.5em;
+   }
+   list-style: none;
+   margin-left: 0;
+   padding-left: 2em;
+   text-indent: -1.5em;
+   li:before {
+      content: "—";
+      font-style: normal;
+      display: block;
+      float: left;
+      width: 1.5em;
+   }
+}
+
+// Style for numbered lists
+ol {
+   font-size: 1em;
+   line-height: 1.4em;
+   font-weight: 400;
+   font-style: italic;
+   max-width: 90%;
+   margin-bottom: 2em;
+   @include media($large) {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      max-width: 100%;
+   }
+   margin-left: 0;
+   padding-left: 2em;
+}
+
+// Style for main page title
+h1 {
+   font-size: 2em;
+   font-weight: 500;
+   margin-top: 0em;
+}
+
+// Style for project titles in home page
+h2 {
+   font-size: 1.5em;
+   font-weight: 500;
+   margin: 0em;
+   margin-bottom: 1em;
+   @include media($large) {
+      font-size: 1.66em;
+   }
+}
+
+// Style for about text
+h3 {
+   font-size: 1.2em;
+   line-height: 1.4em;
+   font-weight: 400;
+   margin-top: 0em;
+   @include media($medium) {
+      line-height: 1.65em;
+   }
+   @include media($large) {
+      font-size: 1.5em;
+   }
+}
+h3:hover {
+   border-color: inherit;
+}
+
+// Style for contacts
+h4 {
+   font-size: 1.2em;
+   line-height: 1.4em;
+   font-weight: 500;
+   margin: 0px;
+   @include media($medium) {
+      line-height: 1.65em;
+   }
+   @include media($large) {
+      font-size: 1.5em;
+   }
+}
+
+// Style for years
+h5 {
+   margin: 0px;
+   font-size: 1em;
+   line-height: 2.5em;
+   font-weight: 500;
+   @include media($large) {
+      font-size: 1.1em;
+      font-weight: 500;
+   }
+}
+
+// Style for credits
+h6 {
+   color: #333333;
+   font-size: 0.75em;
+   font-weight: 300;
+   @include media($large) {
+      font-size: 1em;
+   }
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
+
+// Style for subscripts
+sub {
+    vertical-align: baseline;
+    position: relative;
+    top: 0.15em;
+    font-size: smaller;
+}
+
+@-ms-viewport {
+  width: device-width; // Fixing MS viewport
+}
+
+
+
+
+// Navigation bar
+.navbar-out {
+   width: 100%;
+   margin-top: 0px;
+   font-weight: 500;
+   text-align: center;
+   @include outer-container(100%);
+   @include media($large) {
+      padding-right: 1em;
+      padding-left: 1em;
+   }
+   @include media($full) {
+      padding: 0em;
+   }
+
+   .navbar-in {
+      display: block;
+      @include outer-container;
+      @include media($full) {
+         border-right: $nav-bar-line; // This adds far right divider line in navbar
+         border-left: $nav-bar-line; // This adds far left divider line in navbar
+      }
+
+      .navbar-all {
+         height: 3em;
+         font-size: 1.2em;
+         padding-top: 0.9em;
+         border-left: $nav-bar-line;
+         border-bottom: none;
+         @include span-columns(12);
+         @include media($medium) {
+            font-size: 1.33em;
+            text-align: left;
+            padding-top: 1em;
+            padding-left: 1.1em;
+         }
+         @include media($large) {
+            height: 2.8em;
+            text-align: left;
+            font-size: 1.5em;
+            font-weight: 500;
+            padding-top: 0.8em;
+            padding-left: 1em;
+         }
+      }
+
+      .navbar-all:hover {
+         background-color: $tlo;
+      }
+
+      .navbar-unit {
+         height: 3em;
+         font-size: 1.2em;
+         padding-top: 0.9em;
+         border-left: $nav-bar-line;
+         border-bottom: none;
+         @include span-columns(4, block-collapse);
+         @include media($medium) {
+            font-size: 1.33em;
+            text-align: left;
+            padding-top: 1em;
+            padding-left: 1.1em;
+         }
+         @include media($large) {
+            height: 2.8em;
+            text-align: left;
+            font-size: 1.5em;
+            font-weight: 500;
+            padding-top: 0.8em;
+            padding-left: 1em;
+         }
+      }
+
+      .navbar-unit:hover {
+         background-color: $tlo;
+      }
+   }
+
+   .navbar-typo {
+      text-shadow: none;
+   }
+}
+
+
+
+
+// Thr Grid
+.divide {
+   margin-bottom: 0em;
+   @include outer-container;
+
+   .divide-one-third-right {
+      padding-top: 1em;
+      @include span-columns(12);
+      @include media($medium) {
+         @include span-columns(4);
+         @include shift(-12);
+      }
+   }
+
+   .divide-two-thirds-right {
+      @include span-columns(12);
+      padding-top: 0.5em;
+      @include media($medium) {
+         padding-top: 0em;
+         @include span-columns(8);
+         @include shift(4);
+      }
+   }
+
+   .divide-one-third-left {
+      margin-top: 1.2em;
+      @include span-columns(12);
+      @include media($medium) {
+         @include span-columns(4);
+      }
+   }
+
+   .divide-two-thirds-left {
+      margin-top: 1.2em;
+      @include span-columns(12);
+      @include media($medium) {
+         @include span-columns(8);
+      }
+   }
+
+   .divide-one-middle {
+      @include span-columns(12);
+      padding-top: 0.5em;
+      @include media($medium) {
+         text-align: center;
+         padding-top: 0em;
+         @include span-columns(3.6);
+         @include shift(4.2);
+      }
+      @include media($full) {
+         text-align: center;
+         padding-top: 0em;
+         @include span-columns(2.4);
+         @include shift(4.8);
+      }
+   }
+
+   .divide-half {
+      margin-top: 1.2em;
+      @include outer-container;
+      .divide-half-unit {
+         @include span-columns(12);
+         @include media($medium) {
+            @include span-columns(6);
+         }
+      }
+   }
+
+   .divide-third {
+      margin-top: 1.2em;
+      @include outer-container;
+      .divide-third-unit {
+         @include span-columns(12);
+         @include media($medium) {
+            @include span-columns(4);
+         }
+      }
+   }
+
+   .divide-full-one {
+      margin-top: 1.2em;
+      @include span-columns(12);
+      @include media($medium) {
+         @include span-columns(12);
+      }
+   }
+
+   // Move paragraph to other location when on different device
+   .divide-hide-desktop {
+      margin-top: 1.2em;
+      @include span-columns(12);
+      @include media($medium) {
+         display: none;
+      }
+   }
+
+   .divide-hide-mobile {
+      margin-top: 1.2em;
+      display: none;
+      @include media($medium) {
+         @include span-columns(8);
+      }
+   }
+
+   .divide-hide-mobile-one-third {
+      margin-top: 1.2em;
+      display: none;
+      @include media($medium) {
+         @include span-columns(4);
+      }
+   }
+
+   .divide-hide-mobile-full-one {
+      margin-top: 1.2em;
+      display: none;
+      @include media($medium) {
+         @include span-columns(12);
+      }
+   }
+
+   // Grid for categories pages
+   .divide-categories {
+      margin-top: 1.2em;
+      @include outer-container;
+      margin-bottom: 4em;
+      .divide-categories-unit {
+         @include span-columns(12);
+         margin-bottom: 4em;
+         @include media($medium) {
+            @include span-columns(4);
+            margin-bottom: 0em;
+         }
+      }
+      .divide-categories-unit:last-child {
+         margin-bottom: 0em;
+      }
+
+      img {
+         margin-bottom: 1.25em;
+         @include media($large) {
+            margin-bottom: 1.5em;
+         }
+      }
+   }
+   .divide-categories:last-child {
+      margin-bottom: 0em;
+   }
+}
+
+
+
+
+// Selective hiding
+.hide-mobile {
+   display: none;
+   @include media($medium) {
+      display: inline;
+   }
+}
+
+.hide-desktop {
+   display: block;
+   @include media($medium) {
+      display: none;
+   }
+}
+
+
+
+
+// Other styles
+.works-image {
+   border: 0px;
+   display: block;
+}
+
+.works-image:hover {
+   border: 0px;
+   opacity: $zamglenie;
+   transition: $zwloka;
+}
+
+.works-title:hover {
+   color: $kolor;
+   border-bottom: 1px solid $kolor;
+   transition: $zwloka;
+}
+
+.works-text:hover {
+   color: black;
+}
+
+.contacts {
+   margin-bottom: 3em;
+   margin-top: 1em;
+   @include media($medium) {
+      margin-bottom: 4em;
+      margin-top: 1.5em;
+   }
+}
+
+.categories-image {
+   border: 0px;
+}
+
+.categories-image:hover {
+   border: 0px;
+   opacity: $zamglenie;
+   transition: $zwloka;
+}
+
+.back-to-top {
+   border-bottom: 1px solid;
+   margin-top: 0.66em;
+   @include media ($medium) {
+      margin-top: 1.5em;
+   }
+   text-decoration: none;
+   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
+}
+
+.copyright-typo {
+   background-color: $tlo;
+   text-align: center;
+   font-weight: 300;
+   font-size: 0.8em;
+   line-height: 1.6em;
+   padding: 1.8em;
+   @include media($medium) {
+      font-size: 1em;
+      padding: 1.66em;
+   }
+   @include media($large) {
+      font-size: 1.2em;
+      padding: 1.5em;
+   }
+}
+
+.image-credit {
+   text-align: right;
+   margin-top: 0.33em;
+   float: right;
+}
+
+.separated-images {
+   img {
+      margin-bottom: 2.5em;
+   }
+   img:last-of-type {
+      margin-bottom: 0em;
+   }
+}
+
+.passive-link:hover {
+   color: black;
+   decoration: none;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+   margin-bottom: 0.33em;
+   iframe {
+   	position: absolute;
+   	top: 0;
+   	left: 0;
+   	width: 100%;
+   	height: 100%;
+   }
+}
+
+.paragraph-divider {
+   display: block;
+   border-bottom: $nav-bar-line;
+   margin: 3.5em 0.5em 3em 0.5em;
+}
+
+
+
+
+// Fontello styles
+.fontello-rocket-icon {
+   font-size: 1.8em;
+   position: relative;
+   top: 0.1em;
+   right: 0.2em;
+   border: 0px;
+   margin-left: 0.2em
+}
+
+.fontello-cc-icon {
+   font-size: 1.1em;
+   line-height: 1.1em;
+
+}
+
+.fontello-hi-icon {
+   font-size: 1.8em;
+   position: relative;
+   margin-left: 0em;
+   margin-right: 0em;
+   vertical-align: text-top;
+   border: 0px;
+   top: -0.1em;
+   line-height: 90%;
+}
+.fontello-hi-icon:hover {
+   border: 0px;
+}
+
+.creative-commons {
+   font-weight: 700;
+   font-size: 1em;
+   line-height: 2.4em;
 }

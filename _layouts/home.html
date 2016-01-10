@@ -6,14 +6,14 @@
       </title>
     	{% include head.html %}
 	</head>
-	
+
 	<body>
-		<main id="page">
+		<main id="top">
 			<nav>
 				{% include navbar.html %}
 			</nav>
-			<section>
-				{% include abouts.html %}
+			<section id="about">
+				{% include about-main.html %}
 				{% include contact.html %}
 			</section>
 			{{ content }}

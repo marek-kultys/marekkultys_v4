@@ -82,7 +82,7 @@ a {
    color: inherit;
    border-bottom: $nav-bar-line;
    text-decoration: none;
-   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
+   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo, -0.1em 0.18em $tlo, -0.05em 0.18em $tlo, 0em 0.18em $tlo, 0.05em 0.18em $tlo, 0.1em 0.18em $tlo, 0.15em 0.18em $tlo;
    // Text shadow breaks bottom border in text
 }
 a:hover {
@@ -128,7 +128,7 @@ ul {
       font-style: normal;
       display: block;
       float: left;
-      width: 1.5em;
+      width: 1.33em;
    }
 }
 
@@ -527,6 +527,15 @@ sub {
    }
 }
 
+.round-image {
+   width: 50%;
+   height: auto;
+   border-radius: 50%;
+   position: relative;
+   top: -0.66em;
+   margin-left: 25%;
+}
+
 .categories-image {
    border: 0px;
 }
@@ -544,7 +553,7 @@ sub {
       margin-top: 1.5em;
    }
    text-decoration: none;
-   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo;
+   text-shadow: -0.1em 0.1em $tlo, -0.05em 0.1em $tlo, 0em 0.1em $tlo, 0.05em 0.1em $tlo, 0.1em 0.1em $tlo, 0.15em 0.1em $tlo, -0.1em 0.15em $tlo, -0.05em 0.15em $tlo, 0em 0.15em $tlo, 0.05em 0.15em $tlo, 0.1em 0.15em $tlo, 0.15em 0.15em $tlo, -0.1em 0.18em $tlo, -0.05em 0.18em $tlo, 0em 0.18em $tlo, 0.05em 0.18em $tlo, 0.1em 0.18em $tlo, 0.15em 0.18em $tlo;
 }
 
 .copyright-typo {

@@ -7,19 +7,21 @@
     	{% include head.html %}
 	</head>
 
-	<body>
-		<main id="top">
-			<nav>
-				{% include navbar.html %}
-			</nav>
+	<body id="top">
+		<nav>
+			{% include navbar.html %}
+		</nav>
+		<article>
+			<main>
 			{{ content }}
-			<section id="navigation">
-				{% include back-top.html %}
-			</section>
-			<footer>
-				{% include copyright.html %}
-			</footer>
-		</main>
+			</main>
+		</article>
+		<section id="nav-back">
+			{% include back-top.html %}
+		</section>
+		<footer>
+			{% include copyright.html %}
+		</footer>
 		{% include scripts.html %}
 	</body>
 </html>

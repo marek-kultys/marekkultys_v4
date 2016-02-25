@@ -5,7 +5,7 @@
 @import "neat/neat";
 
 // Import font
-{% include fonts.css %}
+@import "fonts/fonts";
 
 // Declare breakpoints
 $mobile: new-breakpoint(max-width 640px 2);
@@ -231,6 +231,10 @@ sub {
     position: relative;
     top: 0.15em;
     font-size: smaller;
+}
+
+sup {
+   text-shadow: none;
 }
 
 @-ms-viewport {

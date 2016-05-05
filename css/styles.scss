@@ -238,6 +238,23 @@ sup {
   width: device-width; // Fixing MS viewport
 }
 
+@media print {
+   p {
+      color: red;
+      font-size: 2em;
+   }
+   body {
+      background: white;
+   }
+   #navbar, #copyright {
+      display: none;
+   }
+   .cv-url {
+      font-size: 1em;
+      color: blue
+   }
+}
+
 
 
 

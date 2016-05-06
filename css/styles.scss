@@ -276,7 +276,7 @@ sup {
    a:link:after, a:visited:after {
       content:" [" attr(href) "] ";
    }
-   #navbar, #copyright {
+   #navbar, #copyright, #print-me {
       display: none;
    }
    .cv-url {

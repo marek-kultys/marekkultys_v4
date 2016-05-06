@@ -16,10 +16,16 @@ $full: new-breakpoint(min-width 1160px);
 // Declare variables
 $kolor: #ff6600; // All brand colours
 $szary: #858585; // Grey colour for lines and visited links
+$czarny: #000000; // Full black for printed content only
 $zwloka: 0.125s; // All on-hover transitions delays
 $nav-bar-line: 1px solid $szary; // All navbar divider lines
 $tlo: #ffffff; // All background colours
 $zamglenie: 0.66; // Dimming of hyperlink images
+
+$light: 300;
+$regular: 400;
+$semi: 500;
+$bold: 700;
 
 
 
@@ -95,7 +101,7 @@ a:active {
 p {
    font-size: 1.1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    margin-top: 0.1em;
    @include media($large) {
@@ -108,7 +114,7 @@ p {
 ul {
    font-size: 1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    max-width: 88%;
    margin-bottom: 2em;
@@ -133,7 +139,7 @@ ul {
 ol {
    font-size: 1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    max-width: 90%;
    margin-bottom: 2em;
@@ -149,14 +155,14 @@ ol {
 // Style for main page title
 h1 {
    font-size: 2em;
-   font-weight: 500;
+   font-weight: $semi;
    margin-top: 0em;
 }
 
 // Style for project titles in home page
 h2 {
    font-size: 1.5em;
-   font-weight: 500;
+   font-weight: $semi;
    margin: 0em;
    margin-bottom: 1em;
    @include media($large) {
@@ -168,7 +174,7 @@ h2 {
 h3 {
    font-size: 1.2em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    margin-top: 0em;
    @include media($medium) {
       line-height: 1.65em;
@@ -185,7 +191,7 @@ h3:hover {
 h4 {
    font-size: 1.2em;
    line-height: 1.4em;
-   font-weight: 500;
+   font-weight: $semi;
    margin: 0px;
    @include media($medium) {
       line-height: 1.65em;
@@ -200,10 +206,10 @@ h5 {
    margin: 0px;
    font-size: 1em;
    line-height: 2.3em;
-   font-weight: 500;
+   font-weight: $semi;
    @include media($large) {
       font-size: 1.1em;
-      font-weight: 500;
+      font-weight: $semi;
    }
 }
 
@@ -211,7 +217,7 @@ h5 {
 h6 {
    color: #333333;
    font-size: 0.75em;
-   font-weight: 300;
+   font-weight: $light;;
    @include media($large) {
       font-size: 1em;
    }
@@ -238,20 +244,43 @@ sup {
   width: device-width; // Fixing MS viewport
 }
 
+
+
+
+// Print
 @media print {
-   p {
-      color: red;
-      font-size: 2em;
+   @page {
+      size: A4 portrait;
+      margin: 0mm; //this removes automatic headers and footers from documents printed in Chrome
    }
    body {
       background: white;
+      margin: 8mm 12mm 20mm 16mm;
+      padding: 0mm;
+   }
+   h1, h2, h3, h4, h5, p, a {
+      color: $czarny;
+   }
+   h3, p, a {
+      font-size: 4mm;
+   }
+   p {
+      padding-left: 6mm;
+   }
+   h3 {
+      font-weight: 500;
+   }
+   h2, {
+      font-size: 6mm;
+   }
+   a:link:after, a:visited:after {
+      content:" [" attr(href) "] ";
    }
    #navbar, #copyright {
       display: none;
    }
    .cv-url {
       font-size: 1em;
-      color: blue
    }
 }
 
@@ -262,7 +291,7 @@ sup {
 .navbar-out {
    width: 100%;
    margin-top: 0px;
-   font-weight: 500;
+   font-weight: $semi;
    text-align: center;
    @include outer-container(100%);
    @include media($large) {
@@ -281,40 +310,12 @@ sup {
          border-left: $nav-bar-line; // This adds far left divider line in navbar
       }
 
-      .navbar-all {
-         height: 3em;
-         font-size: 1.2em;
-         padding-top: 0.9em;
-         border-left: $nav-bar-line;
-         border-bottom: none;
-         @include span-columns(12);
-         @include media($medium) {
-            font-size: 1.33em;
-            text-align: left;
-            padding-top: 1em;
-            padding-left: 1.1em;
-         }
-         @include media($large) {
-            height: 2.8em;
-            text-align: left;
-            font-size: 1.5em;
-            font-weight: 500;
-            padding-top: 0.8em;
-            padding-left: 1em;
-         }
-      }
-
-      .navbar-all:hover {
-         background-color: $tlo;
-      }
-
       .navbar-unit {
          height: 3em;
          font-size: 1.2em;
          padding-top: 0.9em;
          border-left: $nav-bar-line;
          border-bottom: none;
-         @include span-columns(4, block-collapse);
          @include media($medium) {
             font-size: 1.33em;
             text-align: left;
@@ -325,7 +326,7 @@ sup {
             height: 2.8em;
             text-align: left;
             font-size: 1.5em;
-            font-weight: 500;
+            font-weight: $semi;
             padding-top: 0.8em;
             padding-left: 1em;
          }
@@ -333,6 +334,18 @@ sup {
 
       .navbar-unit:hover {
          background-color: $tlo;
+      }
+
+      .navbar-one {
+         @include span-columns(4, block-collapse);
+      }
+
+      .navbar-two {
+         @include span-columns(8, block-collapse);
+      }
+
+      .navbar-all {
+         @include span-columns(12, block-collapse);
       }
    }
 
@@ -577,7 +590,7 @@ sup {
 .copyright-typo {
    background-color: $tlo;
    text-align: center;
-   font-weight: 300;
+   font-weight: $light;
    font-size: 0.8em;
    line-height: 1.6em;
    padding: 1.8em;
@@ -665,7 +678,7 @@ sup {
 }
 
 .creative-commons {
-   font-weight: 700;
+   font-weight: $bold;
    font-size: 1em;
    line-height: 2.4em;
 }

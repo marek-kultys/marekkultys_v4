@@ -1,17 +1,31 @@
 <div id="navbar" class="navbar-out">
    <div class="navbar-in">
       {% if page.label == "home" %}
-         <a href="/about" class="navbar-unit" style="border-left: 0px;">
+         <a href="/about" class="navbar-unit navbar-one" style="border-left: 0px;">
             <span class="navbar-typo">About</span>
          </a>
-         <a data-scroll href="#projects" class="navbar-unit">
+         <a data-scroll href="#projects" class="navbar-unit navbar-one">
             <span class="navbar-typo">Projects</span>
          </a>
-         <a data-scroll href="#contact" class="navbar-unit">
+         <a data-scroll href="#contact" class="navbar-unit navbar-one">
             <span class="navbar-typo">Contact</span>
          </a>
+      {% elsif page.label == "about" %}
+         <a href="/" class="navbar-unit navbar-two" style="border-left: 0px;">
+            <span class="navbar-typo">Marek Kultys</span>
+         </a>
+         <a href="/cv" class="navbar-unit navbar-one">
+            <span class="navbar-typo">CV</span>
+         </a>
+      {% elsif page.label == "cv" %}
+         <a href="/" class="navbar-unit navbar-two" style="border-left: 0px;">
+            <span class="navbar-typo">Marek Kultys</span>
+         </a>
+         <a href="/about" class="navbar-unit navbar-one">
+            <span class="navbar-typo">About</span>
+         </a>
       {% else %}
-         <a href="/" class="navbar-all" style="border-left: 0px;">
+         <a href="/" class="navbar-unit navbar-all" style="border-left: 0px;">
             <span class="navbar-typo">Marek Kultys</span>
          </a>
       {% endif %}

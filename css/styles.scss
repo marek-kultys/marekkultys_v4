@@ -244,6 +244,10 @@ sup {
   width: device-width; // Fixing MS viewport
 }
 
+#print-url {
+   display: none;
+}
+
 
 
 
@@ -258,10 +262,10 @@ sup {
       margin: 8mm 12mm 20mm 16mm;
       padding: 0mm;
    }
-   h1, h2, h3, h4, h5, p, a {
+   h1, h2, h3, h4, h5, h6, p, a {
       color: $czarny;
    }
-   h3, p, a {
+   h3, p {
       font-size: 4mm;
    }
    p {
@@ -270,17 +274,19 @@ sup {
    h3 {
       font-weight: 500;
    }
-   h2, {
+   h2 {
       font-size: 6mm;
    }
-   a:link:after, a:visited:after {
-      content:" [" attr(href) "] ";
+   h6, a {
+      font-size: 3mm;
+      margin: 1mm;
    }
    #navbar, #copyright, #print-me {
       display: none;
    }
-   .cv-url {
-      font-size: 1em;
+   #print-url {
+      display: inline;
+      float: right;
    }
 }
 

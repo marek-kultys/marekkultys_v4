@@ -251,30 +251,30 @@ sup {
 
 
 
-// Print
+// Print settings
 @media print {
    @page {
       size: A4 portrait;
       margin: 0mm; //this removes automatic headers and footers from documents printed in Chrome
+      size: auto;
    }
    body {
       background: white;
-      margin: 8mm 24mm 20mm 36mm;
+      margin: 8mm 14mm 8mm 36mm;
       padding: 0mm;
    }
    h1, h2, h3, h4, h5, h6, p, a {
       color: $czarny;
    }
    p {
-      font-size: 3.3mm;
+      font-size: 3mm;
    }
    h3 {
-      font-size: 4.5mm;
+      font-size: 4mm;
       font-weight: 500;
    }
    h2 {
-      font-size: 5mm;
-      margin-top: 10mm;
+      font-size: 6mm;
    }
    h6 {
       font-size: 2.8mm;
@@ -290,29 +290,6 @@ sup {
       display: inline;
       float: right;
    }
-}
-
-.cv-section {
-   margin: 1.66em 0em 0.33em 0em;
-}
-
-.cv-line {
-   margin: 0em 0em 0.5em 0em;
-}
-.cv-line:last-of-type {
-   margin-bottom: 1.5em;
-}
-
-.cv-entry {
-   display: inline-block;
-   white-space: nowrap;
-   margin-right: 0.4em;
-}
-
-.cv-details {
-   display: inline-block;
-   margin: 0.33em 0em 0.2em 0;
-   font-weight: $light;
 }
 
 
@@ -388,7 +365,7 @@ sup {
 
 
 
-// Thr Grid
+// The Grid
 .divide {
    margin-bottom: 0em;
    @include outer-container;
@@ -673,6 +650,33 @@ sup {
    display: block;
    border-bottom: $nav-bar-line;
    margin: 3em 0.5em 3em 0em;
+}
+
+
+
+
+// CV styles
+.cv-section {
+   margin: 1.66em 0em 0.2em 0em;
+}
+
+.cv-line {
+   margin: 0em 0em 0.8em 0em;
+}
+.cv-line:last-of-type {
+   margin-bottom: 1.5em;
+}
+
+.cv-entry {
+   display: inline-block;
+   white-space: nowrap;
+   margin-right: 0.4em;
+}
+
+.cv-details {
+   display: inline-block;
+   margin: 0.3em 0em 0em 0;
+   font-weight: $light;
 }
 
 

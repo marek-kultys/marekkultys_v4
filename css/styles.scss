@@ -251,53 +251,32 @@ sup {
 
 
 
-// Print settings
-@media print {
-   @page {
-      size: A4 portrait;
-      margin: 0mm; //this removes automatic headers and footers from documents printed in Chrome
-      size: auto;
+
+// CV styles
+.cv-section {
+   margin: 1.33em 0em 0.2em 0em;
+   @include media($mobile) {
+      font-weight: $semi;
    }
-   body {
-      margin: 10mm 10mm 0mm 10mm;
-   }
-   section {
-      margin: 0mm 26mm 0mm 10mm;
-   }
-   h1, h2, h3, h4, h5, h6, p, a {
-      color: $czarny;
-   }
-   p {
-      font-size: 3mm;
-   }
-   h3 {
-      font-size: 3.6mm;
-      font-weight: 500;
-   }
-   h2 {
-      font-size: 5.6mm;
-      margin-bottom: 4mm;
-   }
-   h6 {
-      font-size: 2.6mm;
-      margin: 0mm 14mm 0mm 0mm;
-   }
-   a {
-      border: none;
-   }
-   #cv-contact {
-      a:link:after, a:visited:after {
-         content:" (" attr(href) ") ";
-         font-size: 2.6mm;
-      }
-   }
-   #navbar, #copyright, #print-me {
-      display: none;
-   }
-   #print-url {
-      display: inline;
-      float: right;
-   }
+}
+
+.cv-line {
+   margin: 0em 0em 0.5em 0em;
+}
+
+.cv-entry {
+   display: inline-block;
+   white-space: nowrap;
+   margin-right: 0.4em;
+}
+
+.cv-details, .cv-pub {
+   margin: 0.33em 0em 0.33em 0;
+   font-weight: $light;
+}
+
+.cv-details {
+   display: inline-block;
 }
 
 
@@ -663,33 +642,6 @@ sup {
 
 
 
-// CV styles
-.cv-section {
-   margin: 1.33em 0em 0.2em 0em;
-}
-
-.cv-line {
-   margin: 0em 0em 0.5em 0em;
-}
-
-.cv-entry {
-   display: inline-block;
-   white-space: nowrap;
-   margin-right: 0.5em;
-}
-
-.cv-details, .cv-pub {
-   margin: 0.33em 0em 0.33em 0;
-   font-weight: $light;
-}
-
-.cv-details {
-   display: inline-block;
-}
-
-
-
-
 // Fontello styles
 .fontello-rocket-icon {
    font-size: 1.8em;
@@ -724,4 +676,66 @@ sup {
    font-weight: $bold;
    font-size: 1em;
    line-height: 2.4em;
+}
+
+
+
+
+// Print settings
+@media print {
+   @page {
+      size: A4 portrait;
+      size: auto;
+      margin: 0mm;
+   }
+   body {
+      background: white;
+   }
+   section {
+      margin: 12mm 16mm 0mm 16mm;
+   }
+   h1, h2, h3, h4, h5, h6, p, a {
+      color: $czarny;
+   }
+   p {
+      font-size: 3mm;
+      line-height: 3.6mm;
+   }
+   h3 {
+      font-size: 4mm;
+      font-weight: 500;
+   }
+   h2 {
+      font-size: 5mm;
+      margin-bottom: 2mm;
+   }
+   h6 {
+      font-size: 2.8mm;
+      margin: 0mm 16mm 0mm 0mm;
+   }
+   a {
+      border: none;
+   }
+   .paragraph-divider {
+      margin: 6mm 0mm 6mm 0mm;
+   }
+   #cv-body {
+      margin: 0mm 24mm 0mm 0mm;
+   }
+   #cv-contact {
+      a:link:after, a:visited:after {
+         content:" (" attr(href) ") ";
+         font-size: 2.8mm;
+         white-space: nowrap;
+         margin-right: 100mm;
+      }
+   }
+   #navbar, #copyright, #print-me {
+      display: none;
+      margin: 0mm;
+   }
+   #print-url {
+      display: inline;
+      float: right;
+   }
 }

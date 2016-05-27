@@ -16,10 +16,16 @@ $full: new-breakpoint(min-width 1160px);
 // Declare variables
 $kolor: #ff6600; // All brand colours
 $szary: #858585; // Grey colour for lines and visited links
+$czarny: #000000; // Full black for printed content only
 $zwloka: 0.125s; // All on-hover transitions delays
 $nav-bar-line: 1px solid $szary; // All navbar divider lines
 $tlo: #ffffff; // All background colours
 $zamglenie: 0.66; // Dimming of hyperlink images
+
+$light: 300;
+$regular: 400;
+$semi: 500;
+$bold: 700;
 
 
 
@@ -40,9 +46,6 @@ body {
    @include media ($large) {
       margin: 0 0 5em;
    }
-}
-
-main {
 }
 
 section {
@@ -98,7 +101,7 @@ a:active {
 p {
    font-size: 1.1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    margin-top: 0.1em;
    @include media($large) {
@@ -111,7 +114,7 @@ p {
 ul {
    font-size: 1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    max-width: 88%;
    margin-bottom: 2em;
@@ -136,7 +139,7 @@ ul {
 ol {
    font-size: 1em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    font-style: italic;
    max-width: 90%;
    margin-bottom: 2em;
@@ -152,14 +155,14 @@ ol {
 // Style for main page title
 h1 {
    font-size: 2em;
-   font-weight: 500;
+   font-weight: $semi;
    margin-top: 0em;
 }
 
 // Style for project titles in home page
 h2 {
    font-size: 1.5em;
-   font-weight: 500;
+   font-weight: $semi;
    margin: 0em;
    margin-bottom: 1em;
    @include media($large) {
@@ -171,7 +174,7 @@ h2 {
 h3 {
    font-size: 1.2em;
    line-height: 1.4em;
-   font-weight: 400;
+   font-weight: $regular;
    margin-top: 0em;
    @include media($medium) {
       line-height: 1.65em;
@@ -188,7 +191,7 @@ h3:hover {
 h4 {
    font-size: 1.2em;
    line-height: 1.4em;
-   font-weight: 500;
+   font-weight: $semi;
    margin: 0px;
    @include media($medium) {
       line-height: 1.65em;
@@ -203,10 +206,10 @@ h5 {
    margin: 0px;
    font-size: 1em;
    line-height: 2.3em;
-   font-weight: 500;
+   font-weight: $semi;
    @include media($large) {
       font-size: 1.1em;
-      font-weight: 500;
+      font-weight: $semi;
    }
 }
 
@@ -214,7 +217,7 @@ h5 {
 h6 {
    color: #333333;
    font-size: 0.75em;
-   font-weight: 300;
+   font-weight: $light;;
    @include media($large) {
       font-size: 1em;
    }
@@ -241,6 +244,11 @@ sup {
   width: device-width; // Fixing MS viewport
 }
 
+#print-url {
+   display: none;
+}
+
+
 
 
 
@@ -248,7 +256,7 @@ sup {
 .navbar-out {
    width: 100%;
    margin-top: 0px;
-   font-weight: 500;
+   font-weight: $semi;
    text-align: center;
    @include outer-container(100%);
    @include media($large) {
@@ -267,40 +275,12 @@ sup {
          border-left: $nav-bar-line; // This adds far left divider line in navbar
       }
 
-      .navbar-all {
-         height: 3em;
-         font-size: 1.2em;
-         padding-top: 0.9em;
-         border-left: $nav-bar-line;
-         border-bottom: none;
-         @include span-columns(12);
-         @include media($medium) {
-            font-size: 1.33em;
-            text-align: left;
-            padding-top: 1em;
-            padding-left: 1.1em;
-         }
-         @include media($large) {
-            height: 2.8em;
-            text-align: left;
-            font-size: 1.5em;
-            font-weight: 500;
-            padding-top: 0.8em;
-            padding-left: 1em;
-         }
-      }
-
-      .navbar-all:hover {
-         background-color: $tlo;
-      }
-
       .navbar-unit {
          height: 3em;
          font-size: 1.2em;
          padding-top: 0.9em;
          border-left: $nav-bar-line;
          border-bottom: none;
-         @include span-columns(4, block-collapse);
          @include media($medium) {
             font-size: 1.33em;
             text-align: left;
@@ -311,7 +291,7 @@ sup {
             height: 2.8em;
             text-align: left;
             font-size: 1.5em;
-            font-weight: 500;
+            font-weight: $semi;
             padding-top: 0.8em;
             padding-left: 1em;
          }
@@ -319,6 +299,18 @@ sup {
 
       .navbar-unit:hover {
          background-color: $tlo;
+      }
+
+      .navbar-one {
+         @include span-columns(4, block-collapse);
+      }
+
+      .navbar-two {
+         @include span-columns(8, block-collapse);
+      }
+
+      .navbar-all {
+         @include span-columns(12, block-collapse);
       }
    }
 
@@ -330,7 +322,7 @@ sup {
 
 
 
-// Thr Grid
+// The Grid
 .divide {
    margin-bottom: 0em;
    @include outer-container;
@@ -563,7 +555,7 @@ sup {
 .copyright-typo {
    background-color: $tlo;
    text-align: center;
-   font-weight: 300;
+   font-weight: $light;
    font-size: 0.8em;
    line-height: 1.6em;
    padding: 1.8em;
@@ -614,7 +606,7 @@ sup {
 .paragraph-divider {
    display: block;
    border-bottom: $nav-bar-line;
-   margin: 3.5em 0.5em 3em 0.5em;
+   margin: 3em 0.5em 3em 0em;
 }
 
 
@@ -651,7 +643,102 @@ sup {
 }
 
 .creative-commons {
-   font-weight: 700;
+   font-weight: $bold;
    font-size: 1em;
    line-height: 2.4em;
+}
+
+
+
+
+// CV styles
+.cv-section {
+   margin: 1.5em 0em 0.2em 0em;
+   @media print {
+      margin: 4mm 0mm 0.9mm 0mm;
+   }
+   @include media($mobile) {
+      font-weight: $semi;
+   }
+}
+
+.cv-line {
+   margin: 0em 0em 0.5em 0em;
+}
+
+.cv-entry {
+   display: inline-block;
+   white-space: nowrap;
+   margin-right: 0.4em;
+}
+
+.cv-details, .cv-pub {
+   margin: 0.33em 0em 0.33em 0;
+   font-weight: $light;
+}
+
+.cv-details {
+   display: inline-block;
+}
+
+
+
+
+// Print settings
+@media print {
+   @page {
+      size: A4 portrait;
+      size: auto;
+      margin: 0mm;
+   }
+   body {
+      background: white;
+   }
+   section {
+      margin: 12mm 16mm 0mm 16mm;
+   }
+   h1, h2, h3, h4, h5, h6, p, a {
+      color: $czarny;
+   }
+   p {
+      font-size: 3mm;
+      line-height: 3.8mm;
+   }
+   h3 {
+      font-size: 4mm;
+      font-weight: 500;
+   }
+   h2 {
+      font-size: 5mm;
+      margin-bottom: 2mm;
+   }
+   h6 {
+      font-size: 2.8mm;
+      margin: 0mm 16mm 0mm 0mm;
+   }
+   a {
+      border: none;
+   }
+   .paragraph-divider {
+      margin: 6mm 0mm 6mm 0mm;
+   }
+   #cv-body {
+      margin: 0mm 24mm 0mm 0mm;
+   }
+   #cv-contact {
+      a:link:after, a:visited:after {
+         content:" (" attr(href) ") ";
+         font-size: 2.8mm;
+         white-space: nowrap;
+         margin-right: 100mm;
+      }
+   }
+   #navbar, #copyright, #print-me {
+      display: none;
+      margin: 0mm;
+   }
+   #print-url {
+      display: inline;
+      float: right;
+   }
 }

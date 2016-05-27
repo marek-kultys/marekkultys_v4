@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" moznomarginboxes mozdisallowselectionprint> <!--extra code removes automatic headers and footers from documents printed in Firefox-->
+	<head>
+    	<title>
+        Marek Kultys — Curriculum Vitae
+      </title>
+    	{% include head.html %}
+	</head>
+
+	<body>
+		<nav id="top">
+			{% include navbar.html %}
+		</nav>
+		<article>
+			{% include cv-url.html %}
+			<section id="cv">
+				{{ content }}
+			</section>
+		</article>
+		<footer>
+			{% include copyright.html %}
+		</footer>
+		{% include scripts.html %}
+	</body>
+</html>

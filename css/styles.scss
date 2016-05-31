@@ -365,17 +365,16 @@ sup {
    .divide-one-middle {
       @include span-columns(12);
       padding-top: 0.5em;
+      text-align: left;
       @include media($medium) {
-         text-align: center;
          padding-top: 0em;
          @include span-columns(3.6);
-         @include shift(4.2);
+         @include shift(4);
       }
       @include media($full) {
-         text-align: center;
          padding-top: 0em;
          @include span-columns(2.4);
-         @include shift(4.8);
+         @include shift(4);
       }
    }
 
@@ -733,9 +732,10 @@ sup {
          margin-right: 100mm;
       }
    }
-   #navbar, #copyright, #print-me {
+   #navbar, #copyright, #print-me, #nav-back {
       display: none;
       margin: 0mm;
+      padding: 0mm;
    }
    #print-url {
       display: inline;

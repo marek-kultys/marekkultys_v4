@@ -1,3 +1,10 @@
+{% if page.label == "cv" %}
+<p id="cv-contact">
+   <span class="cv-entry" title="telephone-number"><a href="tel:+447972296422" title="Call me">Phone</a></span>
+   <span class="cv-entry" title="email-address"><a href="mailto:mk@marekkultys.com" title="Email me">Email</a></span>
+   <span class="cv-entry" title="linkedin-account"><a href="https://www.linkedin.com/in/marek-kultys/" title="Find me on LinkedIn">LinkedIn</a></span>
+</p>
+{% else %}
 <div id="contact" class="divide">
    <div class="divide-two-thirds-right">
       <div class="contacts">
@@ -12,3 +19,10 @@
       </div>
    </div>
 </div>
+{% endif %}
+
+
+
+
+
+

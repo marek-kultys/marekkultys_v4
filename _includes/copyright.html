@@ -1,20 +1,17 @@
 <div id="copyright" class="footer">
    <div class="copyright-typo">
       {% if page.label == "bundles" %}
-         Copyright 2013–{{ 'now' | date: "%Y" }} by Science Practice and Marek Kultys.
+         Content &copy; {{ 'now' | date: "%Y" }} Science Practice and Marek Kultys
       {% else %}
-         Copyright 2007–{{ 'now' | date: "%Y" }} Marek Kultys
-      {% endif %}
-      {% if page.label == "writing" %}
-            , 2+3D, and Medialab Katowice.
+         Content &copy; {{ 'now' | date: "%Y" }} Marek Kultys{% endif %}{% if page.label == "writing" %}, 2+3D, and Medialab Katowice
          {% elsif page.label == "bento" %}
-            and bento•bioworks.
+            and bento•bioworks
          {% elsif page.label == "visweek" %}
-            and workshop participants.
+            and workshop participants
          {% elsif page.label == "immuno" %}
-            and Immunocore.
+            and Immunocore
          {% elsif page.label == "paradoxes" %}
-            and mentioned authors.
+            and mentioned authors
       {% endif %}
    </div>
 </div>
